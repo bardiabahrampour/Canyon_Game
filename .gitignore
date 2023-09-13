@@ -361,3 +361,13 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/vc142.idb
+/game_Debug.exe.recipe
+/game_Debug.exe
+/game.tlog/link.write.1.tlog
+/game.tlog/link.read.1.tlog
+/game.tlog/link.command.1.tlog
+/game.tlog/game.lastbuildstate
+/game.tlog/CL.write.1.tlog
+/game.tlog/CL.read.1.tlog
+/game.tlog/CL.command.1.tlog
