@@ -8,6 +8,8 @@
 
 #include "raywin.h"
 
+#include "Common.h"
+
 #define WINNAME "Canyon"
 
 /*
@@ -27,7 +29,7 @@ class Framework {
   std::vector<Command> Command_Buffer{};
   // this map is prefilled for prototype purposes
   std::map<Command, std::function<void()>> Command_Map = {
-      {Command::TEST, []() { OutputDebugStringA("test\n"); }}};
+      {Command::TEST, []() { spdlog::info("test_command"); }}};
 
  public:
   //Framework();

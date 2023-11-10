@@ -5,12 +5,26 @@
 #include "Framework.h"
 #include "raywin.h"
 
+#include "Common.h"
+
 // annoying windows nag fix!
 #undef LoadImage
+
+fsink file_sink =
+    std::make_shared<spdlog::sinks::basic_file_sink_mt>("log.txt", true);
+msink msvc_sink = std::make_shared<spdlog::sinks::msvc_sink_mt>();
+
+void create_logger() {
+  spdlog::logger loge("logger", {msvc_sink, file_sink});
+  std::shared_ptr<spdlog::logger> lo = std::make_shared<spdlog::logger>(loge);
+  spdlog::set_default_logger(lo);
+}
+
 
 int _stdcall wWinMain(_In_ HINSTANCE hInstance,
                       _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine,
                       _In_ int nShowCmd) {
+  create_logger();
   Vector2 Cursor = {800, 600};
   InitWindow(1920, 1080, "Canyon");
   Camera2D camera{};
@@ -18,7 +32,7 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
   camera.zoom = 1.0f;
   camera.target = Cursor;
   Image img = LoadImage("res/placeholders/island_full_test_1.png");
-
+  spdlog::critical("as");
   Texture2D text = LoadTextureFromImage(img);
   UnloadImage(img);
   SetTargetFPS(60);

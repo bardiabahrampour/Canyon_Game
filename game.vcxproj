@@ -155,6 +155,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Common.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="Graphics.h" />
