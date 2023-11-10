@@ -7,7 +7,6 @@
     should ABOSOLUTELY be changed
 */
 std::vector<std::string> FileManager::GetInputImplFile() {
-
   std::vector<std::string> return_str{};
 
   std::string tmp_str{};
