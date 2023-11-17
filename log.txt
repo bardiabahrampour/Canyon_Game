@@ -1,0 +1,1 @@
+[2023-11-17 12:23:18.533] [logger] [critical] quick_start 47 D:\Canyon\Canyon_Game\main.cpp

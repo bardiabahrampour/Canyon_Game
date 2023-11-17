@@ -15,7 +15,7 @@ extern std::shared_ptr<spdlog::sinks::msvc_sink_mt> msvc_sink;
 // creates and inits the global logger
 extern void create_logger();
 
-//returns the fucntion name
+// returns the fucntion name
 extern std::string return_func_name(
     bool line = false, bool file = false,
     const std::source_location& location = std::source_location::current());
