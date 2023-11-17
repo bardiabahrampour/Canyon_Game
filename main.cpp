@@ -2,10 +2,9 @@
 
 #include <string>
 
+#include "Common.h"
 #include "Framework.h"
 #include "raywin.h"
-
-#include "Common.h"
 
 // annoying windows nag fix!
 #undef LoadImage
@@ -20,6 +19,22 @@ void create_logger() {
   spdlog::set_default_logger(lo);
 }
 
+std::string return_func_name(
+    bool line, bool file,
+    const std::source_location& location) {
+  std::string tmp;
+
+  // get current function name
+  tmp += location.function_name();
+  tmp += ' ';
+
+  // add line and file name if asked
+  if (line) tmp += location.line();
+  tmp += ' ';
+  if (file) tmp += location.file_name();
+
+  return tmp;
+}
 
 int _stdcall wWinMain(_In_ HINSTANCE hInstance,
                       _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine,
@@ -32,7 +47,7 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
   camera.zoom = 1.0f;
   camera.target = Cursor;
   Image img = LoadImage("res/placeholders/island_full_test_1.png");
-  spdlog::critical("as");
+  _log::critical(return_func_name(true,true));
   Texture2D text = LoadTextureFromImage(img);
   UnloadImage(img);
   SetTargetFPS(60);

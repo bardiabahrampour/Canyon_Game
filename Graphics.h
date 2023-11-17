@@ -13,6 +13,8 @@ class Graphics {
   int resx, resy;
   float delta_time;
  public:
-  Graphics(int p_resx, int p_resy);
+  Graphics();
+  void Init(int p_resx, int p_resy);
   void MoveCamera(float x, float y);
+  void Update();
 };

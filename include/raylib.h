@@ -79,6 +79,8 @@
 #ifndef RAYLIB_H
 #define RAYLIB_H
 
+#include "../raywin.h"
+
 #include <stdarg.h>     // Required for: va_list - Only used by TraceLogCallback
 
 #if defined(_WIN32)
