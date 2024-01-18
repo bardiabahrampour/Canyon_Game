@@ -80,5 +80,7 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
                       _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine,
                       _In_ int nShowCmd) {
   create_logger();
-  quick_start();
+  //quick_start();
+  Framework frm;
+  frm.init();
 }

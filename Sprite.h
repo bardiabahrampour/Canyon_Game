@@ -10,11 +10,13 @@
 */
 
 class Sprite {
- public:
-  Color Tint{};
-  int posX{}, PosY{};
-  Texture2D Texture{};
+  Color tint{};
+  int posX{}, posY{};
+  Texture2D texture{};
   int ResourceID{};
+
+ public:
   Sprite(Texture2D t = (Texture2D)(0), int x = 0, int y = 0,
          Color ti = (Color)(0), int res = 0);
+  Texture2D* getTexture();
 };

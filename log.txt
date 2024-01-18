@@ -1,1 +1,4 @@
-[2023-11-17 12:23:18.533] [logger] [critical] quick_start 47 D:\Canyon\Canyon_Game\main.cpp
+[2024-01-18 22:25:24.254] [logger] [info] Init   -> Initialization Pending
+
+[2024-01-18 22:25:24.978] [logger] [info] Init   -> Initialization Done
+

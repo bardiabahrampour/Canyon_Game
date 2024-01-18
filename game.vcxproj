@@ -161,12 +161,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
+    <ClInclude Include="debug_str.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Paths.h" />
     <ClInclude Include="raywin.h" />
     <ClInclude Include="Sprite.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

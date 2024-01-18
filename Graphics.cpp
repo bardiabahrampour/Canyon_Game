@@ -1,13 +1,14 @@
 #include "Graphics.h"
 
 #include "Common.h"
+#include "debug_str.h"
 
 Graphics::Graphics() : cam{0}, cam_cursor{0} {
-  _log::debug(return_func_name() + " -> Finished");
+  _log::debug(FUNC_BEGAN(return_func_name()));
 }
 
 void Graphics::Init(int p_resx, int p_resy) {
-  _log::info("Graphics Initialized -> Pending");
+  _log::info(FUNC_INIT_PENDING(return_func_name()));
 
   int monitor = GetCurrentMonitor();
   fps = GetMonitorRefreshRate(monitor);
@@ -21,7 +22,7 @@ void Graphics::Init(int p_resx, int p_resy) {
   this->cam.zoom = 1.0f;
   this->cam.target = this->cam_cursor;
 
-  _log::info("Graphics Initialized -> Done");
+  _log::info(FUNC_INIT_DONE(return_func_name()));
   _log::info("Monitor:{1}, Fps:{2}", monitor, fps);
   _log::debug(return_func_name() + " -> Finished");
 }
@@ -36,9 +37,10 @@ void Graphics::Update() {
   this->cam.target = this->cam_cursor;
   BeginDrawing();
   ClearBackground(BLACK);
-  for (const auto& t : this->render_list) {
-    DrawTexture(t.Texture, 0, 0, WHITE);
+  for (auto &t : this->render_list) {
+    DrawTexture(*t.getTexture(), 0, 0, WHITE);
   }
   BeginMode2D(this->cam);
   EndMode2D();
+  EndDrawing();
 }

@@ -2,6 +2,7 @@
 #include <raylib.h>
 
 #include <map>
+#include <vector>
 
 #include "raywin.h"
 #include "Sprite.h"
@@ -19,7 +20,7 @@ class Graphics {
   int fps;
   int resx, resy;
   float delta_time;
-  std::vector<Sprite> render_list;
+  std::vector<Sprite> render_list{};
 
  public:
   Graphics();

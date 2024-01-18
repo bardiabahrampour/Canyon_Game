@@ -4,6 +4,7 @@
 
 #include <functional>
 #include <map>
+#include <memory>
 #include <vector>
 
 #include "Common.h"
@@ -22,14 +23,14 @@ class Framework {
   std::vector<Command> Command_Buffer{};
   // this map is prefilled for prototype purposes
   std::map<Command, std::function<void()>> Command_Map = {
-      {Command::TEST, []() { spdlog::info("test_command"); }}};
+      };
 
-  const Graphics *grph;
+  Graphics grph;
 
- public:
+public:
   // Framework();
   void init();
   void update();
   void send(const Command &cmd);
-  void passGraphics(const Graphics &grph);
+  void CameraInput();
 };
