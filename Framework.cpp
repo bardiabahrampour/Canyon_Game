@@ -49,8 +49,12 @@ void Framework::CameraInput() {
   } else if (IsKeyDown(KEY_D)) {
     camx = 0.005f;
   }
-  _log::info("{0},{1}", camx, camy);
-  this->grph.MoveCamera(camx, camy);
-  camx = 0;
-  camy = 0;
+  if (camx != 0 || camy != 0) {
+    _log::info("cam added velocity in cordinates:{0},{1}", camx, camy);
+
+    this->grph.MoveCamera(camx, camy);
+
+    camx = 0;
+    camy = 0;
+  }
 }

@@ -15,10 +15,10 @@ void Graphics::Init(int p_resx, int p_resy) {
   this->resx = p_resx;
   this->resy = p_resy;
 
-  InitWindow(this->resx,this->resy, "Canyon");
+  InitWindow(this->resx, this->resy, "Canyon");
   SetTargetFPS(this->fps);
 
-  this->cam.offset = {this->resx / 2.0f,this->resy / 2.0f};
+  this->cam.offset = {this->resx / 2.0f, this->resy / 2.0f};
   this->cam.zoom = 1.0f;
   this->cam.target = this->cam_cursor;
 
@@ -30,7 +30,7 @@ void Graphics::Init(int p_resx, int p_resy) {
 void Graphics::MoveCamera(float x, float y) {
   this->cam_cursor.x += x;
   this->cam_cursor.y += y;
-  _log::debug("Camera Moved x:{0} y:{1}", x, y);
+  _log::info("Camera Moved x:{0} y:{1}", cam_cursor.x, cam_cursor.y);
 }
 
 void Graphics::Update() {

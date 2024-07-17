@@ -23,7 +23,7 @@ void create_logger() {
 
 // return the functions name
 std::string return_func_name(bool line, bool file,
-                             const std::source_location& location) {
+                             const std::source_location &location) {
   std::string tmp;
 
   // get current function name
@@ -31,9 +31,11 @@ std::string return_func_name(bool line, bool file,
   tmp += ' ';
 
   // add line and file name if asked
-  if (line) tmp += std::to_string(location.line());
+  if (line)
+    tmp += std::to_string(location.line());
   tmp += ' ';
-  if (file) tmp += location.file_name();
+  if (file)
+    tmp += location.file_name();
 
   return tmp;
 }
@@ -80,7 +82,7 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
                       _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine,
                       _In_ int nShowCmd) {
   create_logger();
-  //quick_start();
+  // quick_start();
   std::unique_ptr<Framework> frm = std::make_unique<Framework>();
   frm->init();
 }
