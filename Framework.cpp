@@ -7,7 +7,7 @@
 #include "raywin.h"
 
 void Framework::init() {
-  this->grph.Init(1920,1080);
+  this->grph.Init(1920, 1080);
   while (!WindowShouldClose()) {
     this->update();
   }
@@ -36,19 +36,21 @@ void Framework::send(const Command &cmd) {
 }
 
 void Framework::CameraInput() {
-  int x = 0, y = 0, speed = 1;
+  int speed = 1;
   if (IsKeyDown(KEY_LEFT_SHIFT))
     speed = 2;
   if (IsKeyDown(KEY_W)) {
-    y = 0.005f;
+    camy = 0.005f;
   } else if (IsKeyDown(KEY_S)) {
-    y = -0.005f;
+    camy = -0.005f;
   }
   if (IsKeyDown(KEY_A)) {
-    x = -0.005f;
+    camx = -0.005f;
   } else if (IsKeyDown(KEY_D)) {
-    x = 0.005f;
+    camx = 0.005f;
   }
-
-  this->grph.MoveCamera(x, y);
+  _log::info("{0},{1}", camx, camy);
+  this->grph.MoveCamera(camx, camy);
+  camx = 0;
+  camy = 0;
 }

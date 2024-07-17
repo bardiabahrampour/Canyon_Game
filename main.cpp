@@ -81,6 +81,6 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
                       _In_ int nShowCmd) {
   create_logger();
   //quick_start();
-  Framework frm;
-  frm.init();
+  std::unique_ptr<Framework> frm = std::make_unique<Framework>();
+  frm->init();
 }

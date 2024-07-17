@@ -29,6 +29,7 @@ class Framework {
 
 public:
   // Framework();
+  double camx{}, camy{}; // tmp vars
   void init();
   void update();
   void send(const Command &cmd);
