@@ -17,21 +17,31 @@
         Receives Messages from Systems and Processes them and dispatches anwsers
 */
 
-enum class Command { EXIT_GAME, TEST };
+enum class Command {
+    EXIT_GAME,
+    TEST
+};
 
+// Game Options
+struct Options {
+    int camspeed = 0;
+    int move_intensity = 0;
+};
+
+// Main Application Framework
 class Framework {
-  std::vector<Command> Command_Buffer{};
-  // this map is prefilled for prototype purposes
-  std::map<Command, std::function<void()>> Command_Map = {
-      };
+    std::vector<Command> Command_Buffer {};
+    // this map is prefilled for prototype purposes
+    std::map<Command, std::function<void()>&> Command_Map = {};
 
-  Graphics grph;
+    Graphics grph;
+    int speed = 0;
+    double camx = 0, camy = 0;
 
 public:
-  // Framework();
-  double camx{}, camy{}; // tmp vars
-  void init();
-  void update();
-  void send(const Command &cmd);
-  void CameraInput();
+    // Framework();
+    void init();
+    void update();
+    void send(const Command& cmd);
+    void CameraInput();
 };

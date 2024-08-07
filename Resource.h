@@ -1,5 +1,9 @@
 #pragma once
-class Resource {
-  long long id{};
 
+//to be implemented...
+
+class Resource {
+protected:
+    long long id;
+    //void Load();
 };

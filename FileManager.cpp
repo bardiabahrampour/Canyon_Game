@@ -2,20 +2,23 @@
 
 #include <string>
 
-/*
-    again a quick fix that
-    should ABOSOLUTELY be changed
-*/
-std::vector<std::string> FileManager::GetInputImplFile() {
-  std::vector<std::string> return_str{};
+void FileManager::GetConfigFromFile()
+{
+    std::ifstream* tmp = new std::ifstream(config_file_name);
+    std::string* current_line = new std::string;
+    std::pair<std::string, std::string> current_config;
 
-  std::string tmp_str{};
+    if (tmp->is_open()) {
+        while (std::getline(*tmp, *current_line)) {
+            //ignoring comments
+            if (current_line->at(0) == '#')
+                continue;
+            if (current_line->at(0) == '/' && current_line->at(1) == '/')
+                continue;
 
-  std::ifstream tmp_file("keymaps.cfg");
 
-  while (std::getline(tmp_file, tmp_str)) {
-    return_str.push_back(tmp_str);
-  }
+        }
+    }
 
-  return return_str;
+    delete tmp;
 }
