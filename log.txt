@@ -1,5 +1,5 @@
-[2024-08-13 20:05:22.007] [logger] [info] Init   -> Initialization Pending
+[2024-08-22 16:42:31.639] [logger] [info] Init   -> Initialization Pending
 
-[2024-08-13 20:05:22.398] [logger] [info] Init   -> Initialization Done
+[2024-08-22 16:42:32.445] [logger] [info] Init   -> Initialization Done
 
-[2024-08-13 20:05:22.398] [logger] [info] Monitor:0, Fps:0
+[2024-08-22 16:42:32.446] [logger] [info] Monitor:0, Fps:0
