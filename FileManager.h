@@ -7,14 +7,17 @@
 #include <vector>
 
 constexpr const char* config_file_name = "config.cfg";
-constexpr const char* screen_size = "screen_size";
-constexpr const char* window_name = "window_name";
-constexpr const char* cam_mov = "cam_mov";
 
 enum class Config {
     screen_size,
     window_name,
     cam_mov,
+    null,
+};
+
+enum class Config_Error {
+    property_not_found,
+    config_file_not_found,
 };
 
 struct FileManager {

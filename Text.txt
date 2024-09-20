@@ -1,0 +1,2 @@
+graphics class has a factory for making sprites then
+returning the pointer.

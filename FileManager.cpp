@@ -1,9 +1,10 @@
 #include "FileManager.h"
 
+#include "Common.h"
 #include <algorithm>
 #include <string>
 
-std::map<std::string, Config> config_map = {
+std::map<const char*, Config> conf_str_table = {
     { "screen_size", Config::screen_size },
     { "window_name", Config::window_name },
     { "cam_mov", Config::cam_mov },
@@ -11,23 +12,23 @@ std::map<std::string, Config> config_map = {
 
 void FileManager::GetConfigFromFile()
 {
-    std::ifstream* tmp = new std::ifstream(config_file_name);
-    std::string* current_line = new std::string;
-    std::pair<Config, std::string>* curren_config = new std::pair<Config, std::string>;
+    std::ifstream tmp(config_file_name);
+    std::string current_line;
+    Config conf = Config::null;
 
-    if (tmp->is_open()) {
-        while (std::getline(*tmp, *current_line)) {
+    if (tmp.is_open()) {
+        while (std::getline(tmp, current_line)) {
 
             // ignoring comments
-            if (current_line->at(0) == '#')
+            if (current_line.at(0) == '#')
                 continue;
 
             bool is_reading_value = false;
 
-            std::string* tmp_conf = new std::string;
-            std::string* tmp_value = new std::string;
+            std::string tmp_conf;
+            std::string tmp_value;
 
-            for (auto c : *current_line) {
+            for (auto c : current_line) {
 
                 if (c == ' ')
                     continue;
@@ -38,13 +39,43 @@ void FileManager::GetConfigFromFile()
                 }
 
                 if (is_reading_value) {
-                    tmp_value->push_back(c);
+                    tmp_value.push_back(c);
                 } else {
-                    tmp_conf->push_back(c);
+                    tmp_conf.push_back(c);
                 }
             }
-        }
-    }
 
-    delete tmp;
+            if (auto search = conf_str_table.find(tmp_conf.c_str()); search != conf_str_table.end()) {
+                conf = search->second;
+            } else {
+
+            }
+            this->values[conf] = tmp_value;
+            _log::info("{0},{1}",tmp_value,this->values[conf]);
+        }
+    } else {
+        
+    }
+}
+
+
+int FileManager::GetInt(std::string& key)
+{
+    return 0;
+}
+
+double FileManager::GetDouble(std::string& key)
+{
+    return 0;
+}
+
+Vector2 FileManager::GetVector2(std::string& key)
+{
+    Vector2 a = { 0, 0 };
+    return a;
+}
+
+std::string FileManager::GetString(std::string& key)
+{
+    return nullptr;
 }

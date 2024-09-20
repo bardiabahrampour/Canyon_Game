@@ -30,7 +30,8 @@ void Graphics::Init(int p_resx, int p_resy)
 	_log::info("Monitor:{0}, Fps:{1}", monitor, fps);
 	_log::debug(return_func_name() + " -> Finished");
 
-	Image img = LoadImage("res/placeholders/studios.png");
+	//test code!
+	Image img = LoadImage("res/placeholders/island_full_test_1.png");
 	Texture2D text = LoadTextureFromImage(img);
 	UnloadImage(img);
 	Sprite spr(text);
@@ -63,4 +64,12 @@ void Graphics::addSprite(Sprite& spr)
 		throw - 1;
 
 	this->render_list.push_back(spr);
+}
+
+void Graphics::ZoomIn() { 
+	this->cam.zoom *= cam_mov;
+}
+
+void Graphics::ZoomOut() {
+    this->cam.zoom /= cam_mov;
 }

@@ -3,6 +3,7 @@
 #include <string>
 
 #include "Common.h"
+#include "FileManager.h"
 #include "Framework.h"
 #include "raywin.h"
 
@@ -32,9 +33,11 @@ std::string return_func_name(bool line, bool file,
     tmp += ' ';
 
     // add line and file name if asked
-    if (line)
+    if (line) {
         tmp += std::to_string(location.line());
-    tmp += ' ';
+        tmp += ' ';
+    }
+
     if (file)
         tmp += location.file_name();
 
@@ -90,6 +93,8 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
 
     create_logger();
     // quick_start();
+    FileManager tmp;
+    tmp.GetConfigFromFile();
     std::unique_ptr<Framework> frm = std::make_unique<Framework>();
     frm->init();
 }
