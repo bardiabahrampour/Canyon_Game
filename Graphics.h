@@ -28,9 +28,11 @@ class Graphics {
     int resx, resy;
     float delta_time;
     std::vector<Sprite> render_list {};
-    double cam_mov = 0.05;
+    
 
 public:
+    double cam_mov = 0.05;
+    double mcam_mov = 0.0;
     Graphics();
     void Init(int p_resx, int p_resy);
     void MoveCamera(float x, float y);

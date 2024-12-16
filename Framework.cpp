@@ -9,7 +9,7 @@
 void Framework::init()
 {
     this->grph.Init(1920, 1080);
-    while (!WindowShouldClose()) {
+    while (!WindowShouldClose() && game_is_running) {
         this->update();
     }
 }
@@ -17,6 +17,8 @@ void Framework::init()
 // this is incredibly inefficient and causes EXTREME slow downs
 void Framework::update()
 {
+    if (IsKeyPressed(KEY_Q))
+        this->Command_Buffer.push_back(Command::EXIT_GAME);
     this->CameraInput();
     if (!this->Command_Buffer.empty()) {
         for (auto& cmdbuf : Command_Buffer) {
@@ -45,21 +47,26 @@ void Framework::CameraInput()
     else
         speed = 1;
     if (IsKeyDown(KEY_W)) {
-        camy = -0.05 * speed;
+        camy = this->grph.mcam_mov * speed;
     } else if (IsKeyDown(KEY_S)) {
-        camy = 0.05 * speed;
+        camy = this->grph.cam_mov * speed;
     }
     if (IsKeyDown(KEY_A)) {
-        camx = -0.05 * speed;
+        camx = this->grph.mcam_mov * speed;
     } else if (IsKeyDown(KEY_D)) {
-        camx = 0.05 * speed;
+        camx = this->grph.cam_mov * speed;
     }
     if ((camx != 0 || camy != 0) && (((int)camx % 10 == 0) || ((int)camy % 10 == 0))) {
-        _log::debug("cam added velocity in cordinates:{0},{1}", camx, camy);
+        _log::info("cam added velocity in cordinates:{0},{1}", camx, camy);
 
         this->grph.MoveCamera(camx, camy);
 
         camx = 0;
         camy = 0;
     }
+
+    if (IsKeyDown(KEY_EQUAL))
+        this->grph.ZoomIn();
+    else if (IsKeyDown(KEY_MINUS))
+        this->grph.ZoomOut();
 }

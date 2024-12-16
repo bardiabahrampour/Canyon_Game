@@ -1,8 +1,8 @@
-[2024-09-19 13:58:25.423] [logger] [info] 1920x1080,1920x1080
-[2024-09-19 13:58:25.423] [logger] [info] U,U
-[2024-09-19 13:58:25.423] [logger] [info] 0.05,0.05
-[2024-09-19 13:58:25.424] [logger] [info] Init  -> Initialization Pending
+[2024-12-16 15:09:22.475] [logger] [info] 1920x1080,1920x1080
+[2024-12-16 15:09:22.476] [logger] [info] U,U
+[2024-12-16 15:09:22.476] [logger] [info] 0.05,0.05
+[2024-12-16 15:09:22.476] [logger] [info] Init  -> Initialization Pending
 
-[2024-09-19 13:58:25.964] [logger] [info] Init  -> Initialization Done
+[2024-12-16 15:09:23.046] [logger] [info] Init  -> Initialization Done
 
-[2024-09-19 13:58:25.964] [logger] [info] Monitor:0, Fps:0
+[2024-12-16 15:09:23.046] [logger] [info] Monitor:0, Fps:0
