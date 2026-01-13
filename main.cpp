@@ -92,9 +92,13 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
 #endif
 
     create_logger();
+    #ifndef NDEBUG
+    _log::set_level(_log::level::debug);
+    #endif
     // quick_start();
     FileManager tmp;
     tmp.GetConfigFromFile();
     std::unique_ptr<Framework> frm = std::make_unique<Framework>();
     frm->init();
+    return 0;
 }

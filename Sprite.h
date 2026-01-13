@@ -12,14 +12,17 @@
 
 class Sprite {
     Color tint {};
-    int posX {}, posY {};
+    float posX {}, posY {};
     Texture2D texture {};
 
 public:
     Sprite(Texture2D t = (Texture2D)(0), int x = 0, int y = 0,
-        Color ti = (Color)(0), int res = 0);
+        Color ti = WHITE, int res = 0);
+    Sprite(const char* str, int x = 0, int y = 0, Color ti = WHITE, int res = 0);
     Texture2D* getTexture();
+    float getPosx();
+    float getPosy();
     void setPos(float x, float y);
     void setPos(Vector2 p_pos);
-    void setTexture(Texture2D& text);
+    void setTexture(Texture2D text);
 };

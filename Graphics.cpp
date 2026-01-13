@@ -13,7 +13,7 @@ Graphics::Graphics()
 
 void Graphics::Init(int p_resx, int p_resy)
 {
-    _log::info(FUNC_INIT_PENDING(return_func_name()));
+    _log::debug(FUNC_INIT_PENDING(return_func_name()));
 
     int monitor = GetCurrentMonitor();
     fps = GetMonitorRefreshRate(monitor);
@@ -27,16 +27,19 @@ void Graphics::Init(int p_resx, int p_resy)
     this->cam.zoom = 1.0f;
     this->cam.target = this->cam_cursor;
 
-    _log::info(FUNC_INIT_DONE(return_func_name()));
+    _log::debug(FUNC_INIT_DONE(return_func_name()));
     _log::info("Monitor:{0}, Fps:{1}", monitor, fps);
     _log::debug(FUNC_FINISHED(return_func_name()));
 
     //test code!
-    Image img = LoadImage("res/placeholders/island_full_test_1.png");
-    Texture2D text = LoadTextureFromImage(img);
-    UnloadImage(img);
-    Sprite spr(text);
-    this->addSprite(spr);
+    Image guiimg = LoadImage("res/placeholders/gui_back.png");
+    Texture2D guitxt = LoadTextureFromImage(guiimg);
+    guitxt.width = GetScreenWidth();
+    guitxt.height = GetScreenHeight() / 6;
+    UnloadImage(guiimg);
+    Sprite gui(guitxt, 0, GetScreenHeight() - guitxt.height);
+    this->addGui(gui);
+    tile.set(100, 100);
 }
 
 void Graphics::MoveCamera(float x, float y)
@@ -50,12 +53,20 @@ void Graphics::Update()
 {
     this->cam.target = this->cam_cursor;
     BeginDrawing();
-    ClearBackground(BLACK);
+    ClearBackground(DARKBLUE);
     BeginMode2D(this->cam);
+    //have to replace this in favor of a layer
+    //system aka (vectors of sprites)
     for (auto& t : this->render_list) {
-        DrawTexture(*t.getTexture(), 0, 0, WHITE);
+        DrawTexture(*t.getTexture(), t.getPosx(), t.getPosy(), WHITE);
     }
+    tile.draw();
     EndMode2D();
+    //UI goes here (above 2d mode)
+    //test ui:
+    for (auto& t : this->gui_list) {
+        DrawTexture(*t.getTexture(), t.getPosx(), t.getPosy(), WHITE);
+    }
     EndDrawing();
     if (cam.zoom <= 0.5) {
         cam_mov = 0.45;
@@ -77,6 +88,16 @@ void Graphics::addSprite(Sprite& spr)
     _log::debug(FUNC_FINISHED(return_func_name()));
 }
 
+void Graphics::addGui(Sprite& spr)
+{
+    _log::debug(FUNC_BEGAN(return_func_name()));
+    if (spr.getTexture() == nullptr)
+        throw -1;
+
+    this->gui_list.push_back(spr);
+    _log::debug(FUNC_FINISHED(return_func_name()));
+}
+
 /*
 TODO:   "The Camera Problem!":
             the camera slows down when zooming out and
@@ -87,7 +108,7 @@ FIX:
 
 void Graphics::ZoomIn()
 {
-    _log::info("{}", cam.zoom);
+    _log::debug("{}", cam.zoom);
     if (cam.zoom < 2) {
         this->cam.zoom += 0.0005f;
     }
@@ -95,8 +116,47 @@ void Graphics::ZoomIn()
 
 void Graphics::ZoomOut()
 {
-    _log::info("{}", cam_mov);
+    _log::debug("{}", cam_mov);
     if (cam.zoom > 0.1) {
         this->cam.zoom -= 0.0005f;
+    }
+}
+
+void Tilemap::set(int x, int y, float posx, float posy)
+{
+    Sprite t;
+    t.setPos(0, 0);
+    Image t_img = LoadImage("res/placeholders/grass_test.png");
+    Texture2D tx = LoadTextureFromImage(t_img);
+    t.setTexture(tx);
+    UnloadImage(t_img);
+    tile_types.push_back(t);
+    for (int i = 0; i < x; i++) {
+        for (int j = 0; j < y; j++) {
+            this->tiles.emplace(Tilepos::pair(i, j), 0);
+        }
+    }
+}
+
+void Tilemap::addTiletype(Sprite& a)
+{
+    tile_types.push_back(a);
+}
+
+void Tilemap::setTile(int x, int y, int type)
+{
+    tiles.at({ x, y }) = type;
+}
+
+void Tilemap::draw()
+{
+    for (auto& tile : tiles) {
+        {
+            auto t = *tile_types.at(tile.second).getTexture();
+            DrawTexture(t,
+                (tile.first.first - tile.first.second) * (t.width / 2),
+                (tile.first.first + tile.first.second) * (t.height / 2),
+                WHITE);
+        }
     }
 }

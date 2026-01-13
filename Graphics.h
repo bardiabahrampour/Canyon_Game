@@ -20,6 +20,21 @@
 
 };*/
 
+typedef std::pair<int, int> Tilepos;
+
+class Tilemap {
+    std::vector<Sprite> tile_types;
+    std::map<Tilepos, int> tiles;
+    int maxx, maxy;
+    int posx, posy;
+
+public:
+    void set(int x, int y,float posx = 0 ,float posy = 0);
+    void addTiletype(Sprite& a);
+    void setTile(int x, int y, int type);
+    void draw();
+};
+
 class Graphics {
     Vector2 cam_cursor {};
     Camera2D cam {};
@@ -28,7 +43,8 @@ class Graphics {
     int resx, resy;
     float delta_time;
     std::vector<Sprite> render_list {};
-    
+    std::vector<Sprite> gui_list {};
+    Tilemap tile;
 
 public:
     double cam_mov = 0.05;
@@ -49,4 +65,5 @@ public:
     void ZoomIn();
     void Update();
     void addSprite(Sprite& spr);
+    void addGui(Sprite& spr);
 };

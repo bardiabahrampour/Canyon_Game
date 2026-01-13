@@ -19,6 +19,7 @@
 
 enum class Command {
     EXIT_GAME,
+    TOGGLE_FULLSCREEN,
     TEST
 };
 
@@ -38,6 +39,9 @@ class Framework {
         { Command::EXIT_GAME, [=]() {
              game_is_running = false;
          } },
+        { Command::TOGGLE_FULLSCREEN, [=]() {
+             ToggleFullscreen();
+         } }
     };
 
     Graphics grph;
