@@ -39,7 +39,7 @@ void Graphics::Init(int p_resx, int p_resy)
     UnloadImage(guiimg);
     Sprite gui(guitxt, 0, GetScreenHeight() - guitxt.height);
     this->addGui(gui);
-    tile.set(100, 100);
+    tile.set(50, 30);
 }
 
 void Graphics::MoveCamera(float x, float y)
@@ -60,7 +60,7 @@ void Graphics::Update()
     for (auto& t : this->render_list) {
         DrawTexture(*t.getTexture(), t.getPosx(), t.getPosy(), WHITE);
     }
-    tile.draw();
+    tile.draw(rotation_x,rotation_y);
     EndMode2D();
     //UI goes here (above 2d mode)
     //test ui:
@@ -122,11 +122,37 @@ void Graphics::ZoomOut()
     }
 }
 
+void Graphics::RotateRight() {
+    if (deg_indx == 3)
+        deg_indx = 0;
+    else {
+        deg_indx++;
+    }
+    rotation_x = deg[deg_indx].x;
+    rotation_y = deg[deg_indx].y;
+    tile.
+    
+    _log::info(deg_indx);
+}
+
+void Graphics::RotateLeft()
+{
+    if (deg_indx == 0)
+        deg_indx = 3;
+    else {
+        deg_indx--;
+    }
+    rotation_x = deg[deg_indx].x;
+    rotation_y = deg[deg_indx].y;
+    _log::info(deg_indx);
+}
+
+
 void Tilemap::set(int x, int y, float posx, float posy)
 {
     Sprite t;
     t.setPos(0, 0);
-    Image t_img = LoadImage("res/placeholders/grass_test.png");
+    Image t_img = LoadImage("res/placeholders/grass_test-1.png");
     Texture2D tx = LoadTextureFromImage(t_img);
     t.setTexture(tx);
     UnloadImage(t_img);
@@ -136,6 +162,8 @@ void Tilemap::set(int x, int y, float posx, float posy)
             this->tiles.emplace(Tilepos::pair(i, j), 0);
         }
     }
+    maxx = (x - y) * TILE_WIDTH_DRAW;
+    maxy = (x + y) * TILE_HEIGHT_DRAW;
 }
 
 void Tilemap::addTiletype(Sprite& a)
@@ -148,15 +176,34 @@ void Tilemap::setTile(int x, int y, int type)
     tiles.at({ x, y }) = type;
 }
 
-void Tilemap::draw()
+void Tilemap::draw(int rx, int ry,float offsetx,float offsety)
 {
     for (auto& tile : tiles) {
-        {
-            auto t = *tile_types.at(tile.second).getTexture();
-            DrawTexture(t,
-                (tile.first.first - tile.first.second) * (t.width / 2),
-                (tile.first.first + tile.first.second) * (t.height / 2),
-                WHITE);
-        }
+        // Isometric projection formula
+        int screenX = (tile.first.first - tile.first.second) * TILE_WIDTH_DRAW;
+        int screenY = (tile.first.first + tile.first.second) * TILE_HEIGHT_DRAW;
+
+        // Apply rotation (view direction) to screen coordinates
+        int rotatedX = (rx * screenX) + offsetx;
+        int rotatedY = (ry * screenY);
+
+        DrawTexture(*tile_types.at(tile.second).getTexture(),
+            rotatedX, rotatedY, WHITE);
     }
+}
+
+float Tilemap::getMaxx() {
+    return maxx;
+}
+
+float Tilemap::getMaxy() {
+    return maxy;
+}
+
+void Tilemap::setOffsetx(float offsetx_p) {
+    offsetx = offsetx_p;
+}
+
+void Tilemap::setOffsety(float offsety_p) {
+
 }

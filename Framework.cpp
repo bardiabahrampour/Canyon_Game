@@ -18,7 +18,7 @@ void Framework::init()
 void Framework::update()
 {
     //test example!
-    if (IsKeyPressed(KEY_Q))
+    if (IsKeyPressed(KEY_ESCAPE))
         this->Command_Buffer.push_back(Command::EXIT_GAME);
     if (IsKeyPressed(KEY_F))
         this->Command_Buffer.push_back(Command::TOGGLE_FULLSCREEN);
@@ -45,10 +45,13 @@ void Framework::send(const Command& cmd)
 
 void Framework::CameraInput()
 {
+//  TODO: turn to switch case
     if (IsKeyDown(KEY_LEFT_SHIFT))
         speed = 10;
     else if (IsKeyDown(KEY_LEFT_CONTROL))
         speed = 2;
+    else if (IsKeyDown(KEY_LEFT_ALT))
+        speed = 20;
     else
         speed = 4;
     if (IsKeyDown(KEY_W)) {
@@ -74,4 +77,9 @@ void Framework::CameraInput()
         this->grph.ZoomIn();
     else if (IsKeyDown(KEY_MINUS))
         this->grph.ZoomOut();
+
+    if (IsKeyPressed(KEY_E))
+        grph.RotateRight();
+    else if (IsKeyPressed(KEY_Q))
+        grph.RotateLeft();
 }
