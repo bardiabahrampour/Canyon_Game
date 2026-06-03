@@ -6,9 +6,25 @@
 
 #include "raywin.h"
 
+/*
+    TODO!!:
+        we have to decouple everything
+        try to rely on shared data maniupulation
+        instead of function calls
+        like camera is just a struct and both 
+        graphics and framework is reading it
+        framework manipulates based on input
+        graphics reads it every frame;
+        grapihcs and others are inited in main loop
+        then in the main loop
+        hey are updated one by one with shared data
+        passing through like message bus, draw list, gui list
+*/
+
 void Framework::init()
 {
-    this->grph.Init(GetScreenWidth(),GetScreenHeight());
+    this->grph.Init(GetScreenWidth(), GetScreenHeight());
+    this->game_state = GameState::PLAYING;
     while (!WindowShouldClose() && game_is_running) {
         this->update();
     }
@@ -17,12 +33,14 @@ void Framework::init()
 // this is incredibly inefficient and causes EXTREME slow downs
 void Framework::update()
 {
-    //test example!
+    if (this->game_state == GameState::NONE)
+        throw GameException("GameState is NONE!!");
+
+    // test example!
     if (IsKeyPressed(KEY_ESCAPE))
         this->Command_Buffer.push_back(Command::EXIT_GAME);
     if (IsKeyPressed(KEY_F))
         this->Command_Buffer.push_back(Command::TOGGLE_FULLSCREEN);
-    this->CameraInput();
     if (!this->Command_Buffer.empty()) {
         for (auto& cmdbuf : Command_Buffer) {
             auto it = this->Command_Map.find(cmdbuf);
@@ -34,8 +52,24 @@ void Framework::update()
             this->Command_Buffer.pop_back();
         }
     }
+    switch (this->game_state) {
+    case GameState::MAIN_MENU:
+        break;
+    case GameState::PAUSE:
+        break;
+    case GameState::PLAYING:
+        this->GameLoop();
+    default:
+        break;
+    }
+
     // this->Command_Buffer.clear();
-    this->grph.Update();
+    this->grph.Update(sprite_buffer,gui_buffer);
+}
+
+void Framework::GameLoop()
+{
+    this->CameraInput();
 }
 
 void Framework::send(const Command& cmd)
@@ -45,7 +79,7 @@ void Framework::send(const Command& cmd)
 
 void Framework::CameraInput()
 {
-//  TODO: turn to switch case
+    //  TODO: turn to switch case
     if (IsKeyDown(KEY_LEFT_SHIFT))
         speed = 10;
     else if (IsKeyDown(KEY_LEFT_CONTROL))
@@ -82,4 +116,12 @@ void Framework::CameraInput()
         grph.RotateRight();
     else if (IsKeyPressed(KEY_Q))
         grph.RotateLeft();
+}
+
+void Framework::SetSpriteBuffer(SpriteBuffer& sprt_buff) {
+    sprite_buffer = sprt_buff;
+}
+
+void Framework::SetGuiBuffer(SpriteBuffer& gui_buff) {
+    gui_buffer = gui_buff;
 }

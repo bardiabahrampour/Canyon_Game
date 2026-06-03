@@ -48,16 +48,13 @@ void FileManager::GetConfigFromFile()
             if (auto search = conf_str_table.find(tmp_conf.c_str()); search != conf_str_table.end()) {
                 conf = search->second;
             } else {
-
             }
             this->values[conf] = tmp_value;
-            _log::info("{0},{1}",tmp_value,this->values[conf]);
+            _log::info("{0},{1}", tmp_value, this->values[conf]);
         }
     } else {
-        
     }
 }
-
 
 int FileManager::GetInt(std::string& key)
 {

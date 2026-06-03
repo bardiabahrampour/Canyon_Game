@@ -38,12 +38,6 @@ void Sprite::setPos(Vector2 p_pos)
 
 void Sprite::setTexture(Texture2D text) { this->texture = text; }
 
-float Sprite::getPosx()
-{
-    return posX;
-}
+float Sprite::getPosx() { return posX; }
 
-float Sprite::getPosy()
-{
-    return posY;
-}
+float Sprite::getPosy() { return posY; }

@@ -92,9 +92,9 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance,
 #endif
 
     create_logger();
-    #ifndef NDEBUG
+#ifndef NDEBUG
     _log::set_level(_log::level::debug);
-    #endif
+#endif
     // quick_start();
     FileManager tmp;
     tmp.GetConfigFromFile();

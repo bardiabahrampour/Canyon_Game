@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Resource.h"
+#include <vector>
 #include <raylib.h>
 
 /*
@@ -26,3 +27,5 @@ public:
     void setPos(Vector2 p_pos);
     void setTexture(Texture2D text);
 };
+
+typedef std::vector<Sprite> SpriteBuffer;

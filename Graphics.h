@@ -32,12 +32,14 @@ class Tilemap {
     int posx, posy;
     float offsets[4] = { 0, -maxx, 0, 0 };
     float offsetx, offsety;
+    int rx=0, ry=0;
 
 public:
-    void set(int x, int y, float posx = 0, float posy = 0);
+    void set(int x, int y,float posx = 0, float posy = 0);
+    void update(int prx,int pry);
     void addTiletype(Sprite& a);
     void setTile(int x, int y, int type);
-    void draw(int rx, int ry,float offsetx,float offsety);
+    void draw(int x, int y, float offsetx, float offsety,SpriteBuffer &sprt_buff);
     float getMaxx();
     float getMaxy();
     void setOffsetx(float offsetx_p);
@@ -57,8 +59,6 @@ class Graphics {
     int rotation_y = 1;
     Vector2 deg[4] = { (1, 1), (-1, 1), (-1, -1), (1, -1) };
     int deg_indx = 0;
-    std::vector<Sprite> render_list {};
-    std::vector<Sprite> gui_list {};
     Tilemap tile;
 
 public:
@@ -80,7 +80,5 @@ public:
     void ZoomIn();
     void RotateRight();
     void RotateLeft();
-    void Update();
-    void addSprite(Sprite& spr);
-    void addGui(Sprite& spr);
+    void Update(SpriteBuffer& sprt_buff,SpriteBuffer& gui_buff);
 };

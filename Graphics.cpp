@@ -31,14 +31,6 @@ void Graphics::Init(int p_resx, int p_resy)
     _log::info("Monitor:{0}, Fps:{1}", monitor, fps);
     _log::debug(FUNC_FINISHED(return_func_name()));
 
-    //test code!
-    Image guiimg = LoadImage("res/placeholders/gui_back.png");
-    Texture2D guitxt = LoadTextureFromImage(guiimg);
-    guitxt.width = GetScreenWidth();
-    guitxt.height = GetScreenHeight() / 6;
-    UnloadImage(guiimg);
-    Sprite gui(guitxt, 0, GetScreenHeight() - guitxt.height);
-    this->addGui(gui);
     tile.set(50, 30);
 }
 
@@ -49,24 +41,26 @@ void Graphics::MoveCamera(float x, float y)
     _log::debug("Camera Moved x:{0} y:{1}", cam_cursor.x, cam_cursor.y);
 }
 
-void Graphics::Update()
+void Graphics::Update(SpriteBuffer& sprt_buff, SpriteBuffer& gui_buff)
 {
     this->cam.target = this->cam_cursor;
     BeginDrawing();
     ClearBackground(DARKBLUE);
     BeginMode2D(this->cam);
+    tile.draw(rotation_x, rotation_y, 0, 0, sprt_buff);
     //have to replace this in favor of a layer
     //system aka (vectors of sprites)
-    for (auto& t : this->render_list) {
+    for (auto& t : sprt_buff) {
         DrawTexture(*t.getTexture(), t.getPosx(), t.getPosy(), WHITE);
     }
-    tile.draw(rotation_x,rotation_y);
+    sprt_buff.clear();
     EndMode2D();
     //UI goes here (above 2d mode)
     //test ui:
-    for (auto& t : this->gui_list) {
+    for (auto& t : gui_buff) {
         DrawTexture(*t.getTexture(), t.getPosx(), t.getPosy(), WHITE);
     }
+    gui_buff.clear();
     EndDrawing();
     if (cam.zoom <= 0.5) {
         cam_mov = 0.45;
@@ -76,26 +70,6 @@ void Graphics::Update()
         cam_mov = 0.05;
     }
     mcam_mov = -1 * cam_mov;
-}
-
-void Graphics::addSprite(Sprite& spr)
-{
-    _log::debug(FUNC_BEGAN(return_func_name()));
-    if (spr.getTexture() == nullptr)
-        throw -1;
-
-    this->render_list.push_back(spr);
-    _log::debug(FUNC_FINISHED(return_func_name()));
-}
-
-void Graphics::addGui(Sprite& spr)
-{
-    _log::debug(FUNC_BEGAN(return_func_name()));
-    if (spr.getTexture() == nullptr)
-        throw -1;
-
-    this->gui_list.push_back(spr);
-    _log::debug(FUNC_FINISHED(return_func_name()));
 }
 
 /*
@@ -122,7 +96,8 @@ void Graphics::ZoomOut()
     }
 }
 
-void Graphics::RotateRight() {
+void Graphics::RotateRight()
+{
     if (deg_indx == 3)
         deg_indx = 0;
     else {
@@ -130,9 +105,8 @@ void Graphics::RotateRight() {
     }
     rotation_x = deg[deg_indx].x;
     rotation_y = deg[deg_indx].y;
-    tile.
-    
-    _log::info(deg_indx);
+
+    //_log::info(deg_indx);
 }
 
 void Graphics::RotateLeft()
@@ -146,7 +120,6 @@ void Graphics::RotateLeft()
     rotation_y = deg[deg_indx].y;
     _log::info(deg_indx);
 }
-
 
 void Tilemap::set(int x, int y, float posx, float posy)
 {
@@ -166,6 +139,16 @@ void Tilemap::set(int x, int y, float posx, float posy)
     maxy = (x + y) * TILE_HEIGHT_DRAW;
 }
 
+void Tilemap::update(int prx, int pry)
+{
+    if ((prx == rx) && (pry == ry))
+        return;
+    else {
+        //have to implement rotation
+        return;
+    }
+}
+
 void Tilemap::addTiletype(Sprite& a)
 {
     tile_types.push_back(a);
@@ -176,7 +159,7 @@ void Tilemap::setTile(int x, int y, int type)
     tiles.at({ x, y }) = type;
 }
 
-void Tilemap::draw(int rx, int ry,float offsetx,float offsety)
+void Tilemap::draw(int x, int y, float offsetx, float offsety, SpriteBuffer& sprt_buff)
 {
     for (auto& tile : tiles) {
         // Isometric projection formula
@@ -184,26 +167,30 @@ void Tilemap::draw(int rx, int ry,float offsetx,float offsety)
         int screenY = (tile.first.first + tile.first.second) * TILE_HEIGHT_DRAW;
 
         // Apply rotation (view direction) to screen coordinates
-        int rotatedX = (rx * screenX) + offsetx;
-        int rotatedY = (ry * screenY);
+        int rotatedX = (x * screenX) + offsetx;
+        int rotatedY = (y * screenY);
 
-        DrawTexture(*tile_types.at(tile.second).getTexture(),
-            rotatedX, rotatedY, WHITE);
+        // DrawTexture(*tile_types.at(tile.second).getTexture(),
+        //     rotatedX, rotatedY, WHITE);
+        sprt_buff.push_back(Sprite(*tile_types.at(tile.second).getTexture(), rotatedX, rotatedY, WHITE));
     }
 }
 
-float Tilemap::getMaxx() {
+float Tilemap::getMaxx()
+{
     return maxx;
 }
 
-float Tilemap::getMaxy() {
+float Tilemap::getMaxy()
+{
     return maxy;
 }
 
-void Tilemap::setOffsetx(float offsetx_p) {
+void Tilemap::setOffsetx(float offsetx_p)
+{
     offsetx = offsetx_p;
 }
 
-void Tilemap::setOffsety(float offsety_p) {
-
+void Tilemap::setOffsety(float offsety_p)
+{
 }

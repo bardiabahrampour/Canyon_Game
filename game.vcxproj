@@ -156,6 +156,7 @@
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="Framework.cpp" />
     <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="GUI.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="Graphics.h" />
+    <ClInclude Include="GUI.h" />
     <ClInclude Include="Paths.h" />
     <ClInclude Include="raywin.h" />
     <ClInclude Include="Resource.h" />
