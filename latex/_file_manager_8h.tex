@@ -1,0 +1,82 @@
+\hypertarget{_file_manager_8h}{}\doxysection{File\+Manager.\+h File Reference}
+\label{_file_manager_8h}\index{FileManager.h@{FileManager.h}}
+{\ttfamily \#include \char`\"{}raywin.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$raylib.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_file_manager}{File\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460d}{Config}} \{ \mbox{\hyperlink{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460da3323d43b4c3f4fcf12e23e4925ad60fb}{screen\+\_\+size}}
+, \mbox{\hyperlink{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460da4244f600ca9e924dfa9f0088d0a0721c}{window\+\_\+name}}
+, \mbox{\hyperlink{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460daa3f9771815d57e6cfd95253bcf467387}{cam\+\_\+mov}}
+, \mbox{\hyperlink{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460da37a6259cc0c1dae299a7866489dff0bd}{null}}
+ \}
+\item 
+enum class \mbox{\hyperlink{_file_manager_8h_a39f3fdc683322bc24462f53d1a33620f}{Config\+\_\+\+Error}} \{ \mbox{\hyperlink{_file_manager_8h_a39f3fdc683322bc24462f53d1a33620fab7fa02ebdee0815b062904f58025686d}{property\+\_\+not\+\_\+found}}
+, \mbox{\hyperlink{_file_manager_8h_a39f3fdc683322bc24462f53d1a33620fa36ec2b8e09f1d27d42a5784d69f6724e}{config\+\_\+file\+\_\+not\+\_\+found}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr const char $\ast$ \mbox{\hyperlink{_file_manager_8h_a0e4d04f48e60cbf474530423e38cf597}{config\+\_\+file\+\_\+name}} = \char`\"{}config.\+cfg\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460d}\label{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460d}} 
+\index{FileManager.h@{FileManager.h}!Config@{Config}}
+\index{Config@{Config}!FileManager.h@{FileManager.h}}
+\doxysubsubsection{\texorpdfstring{Config}{Config}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460d}{Config}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{screen\_size@{screen\_size}!FileManager.h@{FileManager.h}}\index{FileManager.h@{FileManager.h}!screen\_size@{screen\_size}}}\mbox{\Hypertarget{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460da3323d43b4c3f4fcf12e23e4925ad60fb}\label{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460da3323d43b4c3f4fcf12e23e4925ad60fb}} 
+screen\+\_\+size&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{window\_name@{window\_name}!FileManager.h@{FileManager.h}}\index{FileManager.h@{FileManager.h}!window\_name@{window\_name}}}\mbox{\Hypertarget{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460da4244f600ca9e924dfa9f0088d0a0721c}\label{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460da4244f600ca9e924dfa9f0088d0a0721c}} 
+window\+\_\+name&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cam\_mov@{cam\_mov}!FileManager.h@{FileManager.h}}\index{FileManager.h@{FileManager.h}!cam\_mov@{cam\_mov}}}\mbox{\Hypertarget{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460daa3f9771815d57e6cfd95253bcf467387}\label{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460daa3f9771815d57e6cfd95253bcf467387}} 
+cam\+\_\+mov&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{null@{null}!FileManager.h@{FileManager.h}}\index{FileManager.h@{FileManager.h}!null@{null}}}\mbox{\Hypertarget{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460da37a6259cc0c1dae299a7866489dff0bd}\label{_file_manager_8h_a0d8785f1f5499688f53bc72e6900460da37a6259cc0c1dae299a7866489dff0bd}} 
+null&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_file_manager_8h_a39f3fdc683322bc24462f53d1a33620f}\label{_file_manager_8h_a39f3fdc683322bc24462f53d1a33620f}} 
+\index{FileManager.h@{FileManager.h}!Config\_Error@{Config\_Error}}
+\index{Config\_Error@{Config\_Error}!FileManager.h@{FileManager.h}}
+\doxysubsubsection{\texorpdfstring{Config\_Error}{Config\_Error}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_file_manager_8h_a39f3fdc683322bc24462f53d1a33620f}{Config\+\_\+\+Error}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{property\_not\_found@{property\_not\_found}!FileManager.h@{FileManager.h}}\index{FileManager.h@{FileManager.h}!property\_not\_found@{property\_not\_found}}}\mbox{\Hypertarget{_file_manager_8h_a39f3fdc683322bc24462f53d1a33620fab7fa02ebdee0815b062904f58025686d}\label{_file_manager_8h_a39f3fdc683322bc24462f53d1a33620fab7fa02ebdee0815b062904f58025686d}} 
+property\+\_\+not\+\_\+found&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{config\_file\_not\_found@{config\_file\_not\_found}!FileManager.h@{FileManager.h}}\index{FileManager.h@{FileManager.h}!config\_file\_not\_found@{config\_file\_not\_found}}}\mbox{\Hypertarget{_file_manager_8h_a39f3fdc683322bc24462f53d1a33620fa36ec2b8e09f1d27d42a5784d69f6724e}\label{_file_manager_8h_a39f3fdc683322bc24462f53d1a33620fa36ec2b8e09f1d27d42a5784d69f6724e}} 
+config\+\_\+file\+\_\+not\+\_\+found&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_file_manager_8h_a0e4d04f48e60cbf474530423e38cf597}\label{_file_manager_8h_a0e4d04f48e60cbf474530423e38cf597}} 
+\index{FileManager.h@{FileManager.h}!config\_file\_name@{config\_file\_name}}
+\index{config\_file\_name@{config\_file\_name}!FileManager.h@{FileManager.h}}
+\doxysubsubsection{\texorpdfstring{config\_file\_name}{config\_file\_name}}
+{\footnotesize\ttfamily constexpr const char$\ast$ config\+\_\+file\+\_\+name = \char`\"{}config.\+cfg\char`\"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+

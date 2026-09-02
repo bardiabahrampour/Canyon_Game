@@ -1,0 +1,72 @@
+\hypertarget{_common_8h}{}\doxysection{Common.\+h File Reference}
+\label{_common_8h}\index{Common.h@{Common.h}}
+{\ttfamily \#include $<$spdlog/sinks/basic\+\_\+file\+\_\+sink.\+h$>$}\newline
+{\ttfamily \#include $<$spdlog/sinks/msvc\+\_\+sink.\+h$>$}\newline
+{\ttfamily \#include $<$spdlog/spdlog.\+h$>$}\newline
+{\ttfamily \#include $<$source\+\_\+location$>$}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ spdlog\+::sinks\+::basic\+\_\+file\+\_\+sink\+\_\+mt $>$ \mbox{\hyperlink{_common_8h_a9d3a688608f8763fc0d1558716467596}{fsink}}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ spdlog\+::sinks\+::msvc\+\_\+sink\+\_\+mt $>$ \mbox{\hyperlink{_common_8h_ad6e6a4c5a29fd571b7c0dfb59854f861}{msink}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_common_8h_a18b02fb6842170152f40b5efe1e13250}{create\+\_\+logger}} ()
+\item 
+std\+::string \mbox{\hyperlink{_common_8h_abb844a32218267c3a4a17da8db21ec31}{return\+\_\+func\+\_\+name}} (bool line=false, bool file=false, const std\+::source\+\_\+location \&location=std\+::source\+\_\+location\+::current())
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ spdlog\+::sinks\+::basic\+\_\+file\+\_\+sink\+\_\+mt $>$ \mbox{\hyperlink{_common_8h_a758168f24a528c321cb6a7c6aa82dbf2}{file\+\_\+sink}}
+\item 
+std\+::shared\+\_\+ptr$<$ spdlog\+::sinks\+::msvc\+\_\+sink\+\_\+mt $>$ \mbox{\hyperlink{_common_8h_a6de3a8969581c065ed78829ff5510686}{msvc\+\_\+sink}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_common_8h_a9d3a688608f8763fc0d1558716467596}\label{_common_8h_a9d3a688608f8763fc0d1558716467596}} 
+\index{Common.h@{Common.h}!fsink@{fsink}}
+\index{fsink@{fsink}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{fsink}{fsink}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$spdlog\+::sinks\+::basic\+\_\+file\+\_\+sink\+\_\+mt$>$ \mbox{\hyperlink{_common_8h_a9d3a688608f8763fc0d1558716467596}{fsink}}}
+
+\mbox{\Hypertarget{_common_8h_ad6e6a4c5a29fd571b7c0dfb59854f861}\label{_common_8h_ad6e6a4c5a29fd571b7c0dfb59854f861}} 
+\index{Common.h@{Common.h}!msink@{msink}}
+\index{msink@{msink}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{msink}{msink}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$spdlog\+::sinks\+::msvc\+\_\+sink\+\_\+mt$>$ \mbox{\hyperlink{_common_8h_ad6e6a4c5a29fd571b7c0dfb59854f861}{msink}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_common_8h_a18b02fb6842170152f40b5efe1e13250}\label{_common_8h_a18b02fb6842170152f40b5efe1e13250}} 
+\index{Common.h@{Common.h}!create\_logger@{create\_logger}}
+\index{create\_logger@{create\_logger}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{create\_logger()}{create\_logger()}}
+{\footnotesize\ttfamily void create\+\_\+logger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_common_8h_abb844a32218267c3a4a17da8db21ec31}\label{_common_8h_abb844a32218267c3a4a17da8db21ec31}} 
+\index{Common.h@{Common.h}!return\_func\_name@{return\_func\_name}}
+\index{return\_func\_name@{return\_func\_name}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{return\_func\_name()}{return\_func\_name()}}
+{\footnotesize\ttfamily std\+::string return\+\_\+func\+\_\+name (\begin{DoxyParamCaption}\item[{bool}]{line = {\ttfamily false},  }\item[{bool}]{file = {\ttfamily false},  }\item[{const std\+::source\+\_\+location \&}]{location = {\ttfamily std\+:\+:source\+\_\+location\+:\+:current()} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_common_8h_a758168f24a528c321cb6a7c6aa82dbf2}\label{_common_8h_a758168f24a528c321cb6a7c6aa82dbf2}} 
+\index{Common.h@{Common.h}!file\_sink@{file\_sink}}
+\index{file\_sink@{file\_sink}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{file\_sink}{file\_sink}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$spdlog\+::sinks\+::basic\+\_\+file\+\_\+sink\+\_\+mt$>$ file\+\_\+sink\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{_common_8h_a6de3a8969581c065ed78829ff5510686}\label{_common_8h_a6de3a8969581c065ed78829ff5510686}} 
+\index{Common.h@{Common.h}!msvc\_sink@{msvc\_sink}}
+\index{msvc\_sink@{msvc\_sink}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{msvc\_sink}{msvc\_sink}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$spdlog\+::sinks\+::msvc\+\_\+sink\+\_\+mt$>$ msvc\+\_\+sink\hspace{0.3cm}{\ttfamily [extern]}}
+

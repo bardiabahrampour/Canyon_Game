@@ -1,0 +1,97 @@
+\hypertarget{_framework_8h}{}\doxysection{Framework.\+h File Reference}
+\label{_framework_8h}\index{Framework.h@{Framework.h}}
+{\ttfamily \#include $<$raylib.\+h$>$}\newline
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Graphics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}raywin.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_camera_properties}{Camera\+Properties}}
+\item 
+struct \mbox{\hyperlink{struct_options}{Options}}
+\item 
+struct \mbox{\hyperlink{struct_game_exception}{Game\+Exception}}
+\item 
+class \mbox{\hyperlink{class_framework}{Framework}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_framework_8h_af611942b7a4bb5af97d4b4ba59304e1e}{WINNAME}}~\char`\"{}Canyon\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_framework_8h_a2afce0a47a93eee73a314d53e4890153}{Command}} \{ \mbox{\hyperlink{_framework_8h_a2afce0a47a93eee73a314d53e4890153af6a0326fefa059c0d46e1bfa3d753a74}{EXIT\+\_\+\+GAME}}
+, \mbox{\hyperlink{_framework_8h_a2afce0a47a93eee73a314d53e4890153ac54519656fdf48a25dbd9612e56cb41e}{TOGGLE\+\_\+\+FULLSCREEN}}
+, \mbox{\hyperlink{_framework_8h_a2afce0a47a93eee73a314d53e4890153a033bd94b1168d7e4f0d644c3c95e35bf}{TEST}}
+ \}
+\item 
+enum class \mbox{\hyperlink{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \{ \mbox{\hyperlink{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285aa16d505f03a4b6f35486f65f6a61317e}{MAIN\+\_\+\+MENU}}
+, \mbox{\hyperlink{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285a291554596c183e837f0a6bec3767c891}{PAUSE}}
+, \mbox{\hyperlink{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285a50366a49630a416ab3ccaa004196027e}{PLAYING}}
+, \mbox{\hyperlink{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285ab50339a10e1de285ac99d4c3990b8693}{NONE}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_framework_8h_af611942b7a4bb5af97d4b4ba59304e1e}\label{_framework_8h_af611942b7a4bb5af97d4b4ba59304e1e}} 
+\index{Framework.h@{Framework.h}!WINNAME@{WINNAME}}
+\index{WINNAME@{WINNAME}!Framework.h@{Framework.h}}
+\doxysubsubsection{\texorpdfstring{WINNAME}{WINNAME}}
+{\footnotesize\ttfamily \#define WINNAME~\char`\"{}Canyon\char`\"{}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_framework_8h_a2afce0a47a93eee73a314d53e4890153}\label{_framework_8h_a2afce0a47a93eee73a314d53e4890153}} 
+\index{Framework.h@{Framework.h}!Command@{Command}}
+\index{Command@{Command}!Framework.h@{Framework.h}}
+\doxysubsubsection{\texorpdfstring{Command}{Command}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_framework_8h_a2afce0a47a93eee73a314d53e4890153}{Command}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXIT\_GAME@{EXIT\_GAME}!Framework.h@{Framework.h}}\index{Framework.h@{Framework.h}!EXIT\_GAME@{EXIT\_GAME}}}\mbox{\Hypertarget{_framework_8h_a2afce0a47a93eee73a314d53e4890153af6a0326fefa059c0d46e1bfa3d753a74}\label{_framework_8h_a2afce0a47a93eee73a314d53e4890153af6a0326fefa059c0d46e1bfa3d753a74}} 
+EXIT\+\_\+\+GAME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOGGLE\_FULLSCREEN@{TOGGLE\_FULLSCREEN}!Framework.h@{Framework.h}}\index{Framework.h@{Framework.h}!TOGGLE\_FULLSCREEN@{TOGGLE\_FULLSCREEN}}}\mbox{\Hypertarget{_framework_8h_a2afce0a47a93eee73a314d53e4890153ac54519656fdf48a25dbd9612e56cb41e}\label{_framework_8h_a2afce0a47a93eee73a314d53e4890153ac54519656fdf48a25dbd9612e56cb41e}} 
+TOGGLE\+\_\+\+FULLSCREEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST@{TEST}!Framework.h@{Framework.h}}\index{Framework.h@{Framework.h}!TEST@{TEST}}}\mbox{\Hypertarget{_framework_8h_a2afce0a47a93eee73a314d53e4890153a033bd94b1168d7e4f0d644c3c95e35bf}\label{_framework_8h_a2afce0a47a93eee73a314d53e4890153a033bd94b1168d7e4f0d644c3c95e35bf}} 
+TEST&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285}\label{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285}} 
+\index{Framework.h@{Framework.h}!GameState@{GameState}}
+\index{GameState@{GameState}!Framework.h@{Framework.h}}
+\doxysubsubsection{\texorpdfstring{GameState}{GameState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAIN\_MENU@{MAIN\_MENU}!Framework.h@{Framework.h}}\index{Framework.h@{Framework.h}!MAIN\_MENU@{MAIN\_MENU}}}\mbox{\Hypertarget{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285aa16d505f03a4b6f35486f65f6a61317e}\label{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285aa16d505f03a4b6f35486f65f6a61317e}} 
+MAIN\+\_\+\+MENU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAUSE@{PAUSE}!Framework.h@{Framework.h}}\index{Framework.h@{Framework.h}!PAUSE@{PAUSE}}}\mbox{\Hypertarget{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285a291554596c183e837f0a6bec3767c891}\label{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285a291554596c183e837f0a6bec3767c891}} 
+PAUSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAYING@{PLAYING}!Framework.h@{Framework.h}}\index{Framework.h@{Framework.h}!PLAYING@{PLAYING}}}\mbox{\Hypertarget{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285a50366a49630a416ab3ccaa004196027e}\label{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285a50366a49630a416ab3ccaa004196027e}} 
+PLAYING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!Framework.h@{Framework.h}}\index{Framework.h@{Framework.h}!NONE@{NONE}}}\mbox{\Hypertarget{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285ab50339a10e1de285ac99d4c3990b8693}\label{_framework_8h_a7899b65f1ea0f655e4bbf8d2a5714285ab50339a10e1de285ac99d4c3990b8693}} 
+NONE&\\
+\hline
+
+\end{DoxyEnumFields}

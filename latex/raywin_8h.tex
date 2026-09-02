@@ -1,0 +1,351 @@
+\hypertarget{raywin_8h}{}\doxysection{raywin.\+h File Reference}
+\label{raywin_8h}\index{raywin.h@{raywin.h}}
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$mmreg.\+h$>$}\newline
+{\ttfamily \#include $<$mmsystem.\+h$>$}\newline
+{\ttfamily \#include $<$objbase.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o_h_e_a_d_e_r}{tag\+BITMAPINFOHEADER}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a8effd0655f96cc25e57c0b348669df7b}{NOGDICAPMASKS}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_ac5ff788cb8638ce5daf99e586083eef2}{NOVIRTUALKEYCODES}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a90d30d395de13a4f31a42b4066cfbb68}{NOWINMESSAGES}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a22c56a31990574a86b40f60b6073cdba}{NOWINSTYLES}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_aea709a8ba0a7d510cefcf625fdb3b4b1}{NOSYSMETRICS}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a15dd7444df67d292b83dc869d6e4b417}{NOMENUS}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a8b8c544b2e9e3359de25f7d89f4f5de9}{NOICONS}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a6f4a8b3fe02f55fd022b91b3a965e15c}{NOKEYSTATES}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a271ce221dc9c5c8887d443008b3d718c}{NOSYSCOMMANDS}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a0293d1b2742d9c9ef401d75a55b81859}{NORASTEROPS}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_ab2dcc39e73a373330467f5f503c779d3}{NOSHOWWINDOW}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a3a75770af38d05856eb2e9d1867b471c}{OEMRESOURCE}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_aa59dc3d2c7dc2ec85638761aeb2d50f7}{NOATOM}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a2e4c78354db40d44bea894e472550c11}{NOCLIPBOARD}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_ad99d89815bdc61acfe8744c41c96e637}{NOCOLOR}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a679a4dcdfeb97910576cff8452efb28e}{NOCTLMGR}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a5ceb8b3e84824f87cae315091546e67f}{NODRAWTEXT}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a2bedaca1c6ca66de2397772910fbe140}{NOGDI}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a1381fe81f9874aa4a669b6bd556f87fa}{NOKERNEL}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a73886ff6a915a4a92e3ade13eba71f6d}{NOUSER}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a8bd3112472ae1e33be8faf5294230948}{NOMB}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a8b2f514658ba28ae0ea3b8b96edf520e}{NOMEMMGR}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a37618c72c08b2464576612b2ac595b30}{NOMETAFILE}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a9f918755b601cf4bffca775992e6fb90}{NOMINMAX}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a1f4e51b89381cd3aecebd55bd4d700b6}{NOMSG}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a2d7186e4a6dfcc0011461ce1e8b70a05}{NOOPENFILE}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a06f62f70cab65b4c19972202f784e12d}{NOSCROLL}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a14ac98af6281e748377693d824e41ca9}{NOSERVICE}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_af40cddcc88a6ebeed4f75d4bbbed195e}{NOSOUND}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a7d6ea5ce712ed1d05533cf8ebf38d880}{NOTEXTMETRIC}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_aac388bb1bd11a9a15b594321658ae233}{NOWH}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a964a6e23899e4f0b1886d86b1981545d}{NOWINOFFSETS}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a2ee511fa2fd29a9a1f0efbcb2c364b8f}{NOCOMM}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a0958eca070bb77eddff0a604acda46f2}{NOKANJI}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a34c6896a3b5f4079b3539fb8118be1d5}{NOHELP}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_af883320ccbc88fe5ff2d8733ec0a034f}{NOPROFILER}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a348ad07df4aceda9097d9497b78bccd9}{NODEFERWINDOWPOS}}
+\item 
+\#define \mbox{\hyperlink{raywin_8h_a256fe1caeb996b1142c3eb51097fef0e}{NOMCX}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct tag\+MSG $\ast$ \mbox{\hyperlink{raywin_8h_ab49ef4b9ffb489ffc8a60b02716db46d}{LPMSG}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o_h_e_a_d_e_r}{tag\+BITMAPINFOHEADER}} \mbox{\hyperlink{raywin_8h_a463da1a36c110a831b0d7cefbd9730be}{BITMAPINFOHEADER}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o_h_e_a_d_e_r}{tag\+BITMAPINFOHEADER}} $\ast$ \mbox{\hyperlink{raywin_8h_a17a11cc369b8290d453bd4b23334a3bf}{PBITMAPINFOHEADER}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{raywin_8h_aa59dc3d2c7dc2ec85638761aeb2d50f7}\label{raywin_8h_aa59dc3d2c7dc2ec85638761aeb2d50f7}} 
+\index{raywin.h@{raywin.h}!NOATOM@{NOATOM}}
+\index{NOATOM@{NOATOM}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOATOM}{NOATOM}}
+{\footnotesize\ttfamily \#define NOATOM}
+
+\mbox{\Hypertarget{raywin_8h_a2e4c78354db40d44bea894e472550c11}\label{raywin_8h_a2e4c78354db40d44bea894e472550c11}} 
+\index{raywin.h@{raywin.h}!NOCLIPBOARD@{NOCLIPBOARD}}
+\index{NOCLIPBOARD@{NOCLIPBOARD}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOCLIPBOARD}{NOCLIPBOARD}}
+{\footnotesize\ttfamily \#define NOCLIPBOARD}
+
+\mbox{\Hypertarget{raywin_8h_ad99d89815bdc61acfe8744c41c96e637}\label{raywin_8h_ad99d89815bdc61acfe8744c41c96e637}} 
+\index{raywin.h@{raywin.h}!NOCOLOR@{NOCOLOR}}
+\index{NOCOLOR@{NOCOLOR}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOCOLOR}{NOCOLOR}}
+{\footnotesize\ttfamily \#define NOCOLOR}
+
+\mbox{\Hypertarget{raywin_8h_a2ee511fa2fd29a9a1f0efbcb2c364b8f}\label{raywin_8h_a2ee511fa2fd29a9a1f0efbcb2c364b8f}} 
+\index{raywin.h@{raywin.h}!NOCOMM@{NOCOMM}}
+\index{NOCOMM@{NOCOMM}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOCOMM}{NOCOMM}}
+{\footnotesize\ttfamily \#define NOCOMM}
+
+\mbox{\Hypertarget{raywin_8h_a679a4dcdfeb97910576cff8452efb28e}\label{raywin_8h_a679a4dcdfeb97910576cff8452efb28e}} 
+\index{raywin.h@{raywin.h}!NOCTLMGR@{NOCTLMGR}}
+\index{NOCTLMGR@{NOCTLMGR}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOCTLMGR}{NOCTLMGR}}
+{\footnotesize\ttfamily \#define NOCTLMGR}
+
+\mbox{\Hypertarget{raywin_8h_a348ad07df4aceda9097d9497b78bccd9}\label{raywin_8h_a348ad07df4aceda9097d9497b78bccd9}} 
+\index{raywin.h@{raywin.h}!NODEFERWINDOWPOS@{NODEFERWINDOWPOS}}
+\index{NODEFERWINDOWPOS@{NODEFERWINDOWPOS}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NODEFERWINDOWPOS}{NODEFERWINDOWPOS}}
+{\footnotesize\ttfamily \#define NODEFERWINDOWPOS}
+
+\mbox{\Hypertarget{raywin_8h_a5ceb8b3e84824f87cae315091546e67f}\label{raywin_8h_a5ceb8b3e84824f87cae315091546e67f}} 
+\index{raywin.h@{raywin.h}!NODRAWTEXT@{NODRAWTEXT}}
+\index{NODRAWTEXT@{NODRAWTEXT}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NODRAWTEXT}{NODRAWTEXT}}
+{\footnotesize\ttfamily \#define NODRAWTEXT}
+
+\mbox{\Hypertarget{raywin_8h_a2bedaca1c6ca66de2397772910fbe140}\label{raywin_8h_a2bedaca1c6ca66de2397772910fbe140}} 
+\index{raywin.h@{raywin.h}!NOGDI@{NOGDI}}
+\index{NOGDI@{NOGDI}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOGDI}{NOGDI}}
+{\footnotesize\ttfamily \#define NOGDI}
+
+\mbox{\Hypertarget{raywin_8h_a8effd0655f96cc25e57c0b348669df7b}\label{raywin_8h_a8effd0655f96cc25e57c0b348669df7b}} 
+\index{raywin.h@{raywin.h}!NOGDICAPMASKS@{NOGDICAPMASKS}}
+\index{NOGDICAPMASKS@{NOGDICAPMASKS}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOGDICAPMASKS}{NOGDICAPMASKS}}
+{\footnotesize\ttfamily \#define NOGDICAPMASKS}
+
+\mbox{\Hypertarget{raywin_8h_a34c6896a3b5f4079b3539fb8118be1d5}\label{raywin_8h_a34c6896a3b5f4079b3539fb8118be1d5}} 
+\index{raywin.h@{raywin.h}!NOHELP@{NOHELP}}
+\index{NOHELP@{NOHELP}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOHELP}{NOHELP}}
+{\footnotesize\ttfamily \#define NOHELP}
+
+\mbox{\Hypertarget{raywin_8h_a8b8c544b2e9e3359de25f7d89f4f5de9}\label{raywin_8h_a8b8c544b2e9e3359de25f7d89f4f5de9}} 
+\index{raywin.h@{raywin.h}!NOICONS@{NOICONS}}
+\index{NOICONS@{NOICONS}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOICONS}{NOICONS}}
+{\footnotesize\ttfamily \#define NOICONS}
+
+\mbox{\Hypertarget{raywin_8h_a0958eca070bb77eddff0a604acda46f2}\label{raywin_8h_a0958eca070bb77eddff0a604acda46f2}} 
+\index{raywin.h@{raywin.h}!NOKANJI@{NOKANJI}}
+\index{NOKANJI@{NOKANJI}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOKANJI}{NOKANJI}}
+{\footnotesize\ttfamily \#define NOKANJI}
+
+\mbox{\Hypertarget{raywin_8h_a1381fe81f9874aa4a669b6bd556f87fa}\label{raywin_8h_a1381fe81f9874aa4a669b6bd556f87fa}} 
+\index{raywin.h@{raywin.h}!NOKERNEL@{NOKERNEL}}
+\index{NOKERNEL@{NOKERNEL}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOKERNEL}{NOKERNEL}}
+{\footnotesize\ttfamily \#define NOKERNEL}
+
+\mbox{\Hypertarget{raywin_8h_a6f4a8b3fe02f55fd022b91b3a965e15c}\label{raywin_8h_a6f4a8b3fe02f55fd022b91b3a965e15c}} 
+\index{raywin.h@{raywin.h}!NOKEYSTATES@{NOKEYSTATES}}
+\index{NOKEYSTATES@{NOKEYSTATES}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOKEYSTATES}{NOKEYSTATES}}
+{\footnotesize\ttfamily \#define NOKEYSTATES}
+
+\mbox{\Hypertarget{raywin_8h_a8bd3112472ae1e33be8faf5294230948}\label{raywin_8h_a8bd3112472ae1e33be8faf5294230948}} 
+\index{raywin.h@{raywin.h}!NOMB@{NOMB}}
+\index{NOMB@{NOMB}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOMB}{NOMB}}
+{\footnotesize\ttfamily \#define NOMB}
+
+\mbox{\Hypertarget{raywin_8h_a256fe1caeb996b1142c3eb51097fef0e}\label{raywin_8h_a256fe1caeb996b1142c3eb51097fef0e}} 
+\index{raywin.h@{raywin.h}!NOMCX@{NOMCX}}
+\index{NOMCX@{NOMCX}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOMCX}{NOMCX}}
+{\footnotesize\ttfamily \#define NOMCX}
+
+\mbox{\Hypertarget{raywin_8h_a8b2f514658ba28ae0ea3b8b96edf520e}\label{raywin_8h_a8b2f514658ba28ae0ea3b8b96edf520e}} 
+\index{raywin.h@{raywin.h}!NOMEMMGR@{NOMEMMGR}}
+\index{NOMEMMGR@{NOMEMMGR}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOMEMMGR}{NOMEMMGR}}
+{\footnotesize\ttfamily \#define NOMEMMGR}
+
+\mbox{\Hypertarget{raywin_8h_a15dd7444df67d292b83dc869d6e4b417}\label{raywin_8h_a15dd7444df67d292b83dc869d6e4b417}} 
+\index{raywin.h@{raywin.h}!NOMENUS@{NOMENUS}}
+\index{NOMENUS@{NOMENUS}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOMENUS}{NOMENUS}}
+{\footnotesize\ttfamily \#define NOMENUS}
+
+\mbox{\Hypertarget{raywin_8h_a37618c72c08b2464576612b2ac595b30}\label{raywin_8h_a37618c72c08b2464576612b2ac595b30}} 
+\index{raywin.h@{raywin.h}!NOMETAFILE@{NOMETAFILE}}
+\index{NOMETAFILE@{NOMETAFILE}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOMETAFILE}{NOMETAFILE}}
+{\footnotesize\ttfamily \#define NOMETAFILE}
+
+\mbox{\Hypertarget{raywin_8h_a9f918755b601cf4bffca775992e6fb90}\label{raywin_8h_a9f918755b601cf4bffca775992e6fb90}} 
+\index{raywin.h@{raywin.h}!NOMINMAX@{NOMINMAX}}
+\index{NOMINMAX@{NOMINMAX}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOMINMAX}{NOMINMAX}}
+{\footnotesize\ttfamily \#define NOMINMAX}
+
+\mbox{\Hypertarget{raywin_8h_a1f4e51b89381cd3aecebd55bd4d700b6}\label{raywin_8h_a1f4e51b89381cd3aecebd55bd4d700b6}} 
+\index{raywin.h@{raywin.h}!NOMSG@{NOMSG}}
+\index{NOMSG@{NOMSG}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOMSG}{NOMSG}}
+{\footnotesize\ttfamily \#define NOMSG}
+
+\mbox{\Hypertarget{raywin_8h_a2d7186e4a6dfcc0011461ce1e8b70a05}\label{raywin_8h_a2d7186e4a6dfcc0011461ce1e8b70a05}} 
+\index{raywin.h@{raywin.h}!NOOPENFILE@{NOOPENFILE}}
+\index{NOOPENFILE@{NOOPENFILE}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOOPENFILE}{NOOPENFILE}}
+{\footnotesize\ttfamily \#define NOOPENFILE}
+
+\mbox{\Hypertarget{raywin_8h_af883320ccbc88fe5ff2d8733ec0a034f}\label{raywin_8h_af883320ccbc88fe5ff2d8733ec0a034f}} 
+\index{raywin.h@{raywin.h}!NOPROFILER@{NOPROFILER}}
+\index{NOPROFILER@{NOPROFILER}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOPROFILER}{NOPROFILER}}
+{\footnotesize\ttfamily \#define NOPROFILER}
+
+\mbox{\Hypertarget{raywin_8h_a0293d1b2742d9c9ef401d75a55b81859}\label{raywin_8h_a0293d1b2742d9c9ef401d75a55b81859}} 
+\index{raywin.h@{raywin.h}!NORASTEROPS@{NORASTEROPS}}
+\index{NORASTEROPS@{NORASTEROPS}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NORASTEROPS}{NORASTEROPS}}
+{\footnotesize\ttfamily \#define NORASTEROPS}
+
+\mbox{\Hypertarget{raywin_8h_a06f62f70cab65b4c19972202f784e12d}\label{raywin_8h_a06f62f70cab65b4c19972202f784e12d}} 
+\index{raywin.h@{raywin.h}!NOSCROLL@{NOSCROLL}}
+\index{NOSCROLL@{NOSCROLL}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOSCROLL}{NOSCROLL}}
+{\footnotesize\ttfamily \#define NOSCROLL}
+
+\mbox{\Hypertarget{raywin_8h_a14ac98af6281e748377693d824e41ca9}\label{raywin_8h_a14ac98af6281e748377693d824e41ca9}} 
+\index{raywin.h@{raywin.h}!NOSERVICE@{NOSERVICE}}
+\index{NOSERVICE@{NOSERVICE}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOSERVICE}{NOSERVICE}}
+{\footnotesize\ttfamily \#define NOSERVICE}
+
+\mbox{\Hypertarget{raywin_8h_ab2dcc39e73a373330467f5f503c779d3}\label{raywin_8h_ab2dcc39e73a373330467f5f503c779d3}} 
+\index{raywin.h@{raywin.h}!NOSHOWWINDOW@{NOSHOWWINDOW}}
+\index{NOSHOWWINDOW@{NOSHOWWINDOW}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOSHOWWINDOW}{NOSHOWWINDOW}}
+{\footnotesize\ttfamily \#define NOSHOWWINDOW}
+
+\mbox{\Hypertarget{raywin_8h_af40cddcc88a6ebeed4f75d4bbbed195e}\label{raywin_8h_af40cddcc88a6ebeed4f75d4bbbed195e}} 
+\index{raywin.h@{raywin.h}!NOSOUND@{NOSOUND}}
+\index{NOSOUND@{NOSOUND}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOSOUND}{NOSOUND}}
+{\footnotesize\ttfamily \#define NOSOUND}
+
+\mbox{\Hypertarget{raywin_8h_a271ce221dc9c5c8887d443008b3d718c}\label{raywin_8h_a271ce221dc9c5c8887d443008b3d718c}} 
+\index{raywin.h@{raywin.h}!NOSYSCOMMANDS@{NOSYSCOMMANDS}}
+\index{NOSYSCOMMANDS@{NOSYSCOMMANDS}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOSYSCOMMANDS}{NOSYSCOMMANDS}}
+{\footnotesize\ttfamily \#define NOSYSCOMMANDS}
+
+\mbox{\Hypertarget{raywin_8h_aea709a8ba0a7d510cefcf625fdb3b4b1}\label{raywin_8h_aea709a8ba0a7d510cefcf625fdb3b4b1}} 
+\index{raywin.h@{raywin.h}!NOSYSMETRICS@{NOSYSMETRICS}}
+\index{NOSYSMETRICS@{NOSYSMETRICS}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOSYSMETRICS}{NOSYSMETRICS}}
+{\footnotesize\ttfamily \#define NOSYSMETRICS}
+
+\mbox{\Hypertarget{raywin_8h_a7d6ea5ce712ed1d05533cf8ebf38d880}\label{raywin_8h_a7d6ea5ce712ed1d05533cf8ebf38d880}} 
+\index{raywin.h@{raywin.h}!NOTEXTMETRIC@{NOTEXTMETRIC}}
+\index{NOTEXTMETRIC@{NOTEXTMETRIC}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOTEXTMETRIC}{NOTEXTMETRIC}}
+{\footnotesize\ttfamily \#define NOTEXTMETRIC}
+
+\mbox{\Hypertarget{raywin_8h_a73886ff6a915a4a92e3ade13eba71f6d}\label{raywin_8h_a73886ff6a915a4a92e3ade13eba71f6d}} 
+\index{raywin.h@{raywin.h}!NOUSER@{NOUSER}}
+\index{NOUSER@{NOUSER}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOUSER}{NOUSER}}
+{\footnotesize\ttfamily \#define NOUSER}
+
+\mbox{\Hypertarget{raywin_8h_ac5ff788cb8638ce5daf99e586083eef2}\label{raywin_8h_ac5ff788cb8638ce5daf99e586083eef2}} 
+\index{raywin.h@{raywin.h}!NOVIRTUALKEYCODES@{NOVIRTUALKEYCODES}}
+\index{NOVIRTUALKEYCODES@{NOVIRTUALKEYCODES}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOVIRTUALKEYCODES}{NOVIRTUALKEYCODES}}
+{\footnotesize\ttfamily \#define NOVIRTUALKEYCODES}
+
+\mbox{\Hypertarget{raywin_8h_aac388bb1bd11a9a15b594321658ae233}\label{raywin_8h_aac388bb1bd11a9a15b594321658ae233}} 
+\index{raywin.h@{raywin.h}!NOWH@{NOWH}}
+\index{NOWH@{NOWH}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOWH}{NOWH}}
+{\footnotesize\ttfamily \#define NOWH}
+
+\mbox{\Hypertarget{raywin_8h_a90d30d395de13a4f31a42b4066cfbb68}\label{raywin_8h_a90d30d395de13a4f31a42b4066cfbb68}} 
+\index{raywin.h@{raywin.h}!NOWINMESSAGES@{NOWINMESSAGES}}
+\index{NOWINMESSAGES@{NOWINMESSAGES}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOWINMESSAGES}{NOWINMESSAGES}}
+{\footnotesize\ttfamily \#define NOWINMESSAGES}
+
+\mbox{\Hypertarget{raywin_8h_a964a6e23899e4f0b1886d86b1981545d}\label{raywin_8h_a964a6e23899e4f0b1886d86b1981545d}} 
+\index{raywin.h@{raywin.h}!NOWINOFFSETS@{NOWINOFFSETS}}
+\index{NOWINOFFSETS@{NOWINOFFSETS}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOWINOFFSETS}{NOWINOFFSETS}}
+{\footnotesize\ttfamily \#define NOWINOFFSETS}
+
+\mbox{\Hypertarget{raywin_8h_a22c56a31990574a86b40f60b6073cdba}\label{raywin_8h_a22c56a31990574a86b40f60b6073cdba}} 
+\index{raywin.h@{raywin.h}!NOWINSTYLES@{NOWINSTYLES}}
+\index{NOWINSTYLES@{NOWINSTYLES}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{NOWINSTYLES}{NOWINSTYLES}}
+{\footnotesize\ttfamily \#define NOWINSTYLES}
+
+\mbox{\Hypertarget{raywin_8h_a3a75770af38d05856eb2e9d1867b471c}\label{raywin_8h_a3a75770af38d05856eb2e9d1867b471c}} 
+\index{raywin.h@{raywin.h}!OEMRESOURCE@{OEMRESOURCE}}
+\index{OEMRESOURCE@{OEMRESOURCE}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{OEMRESOURCE}{OEMRESOURCE}}
+{\footnotesize\ttfamily \#define OEMRESOURCE}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{raywin_8h_a463da1a36c110a831b0d7cefbd9730be}\label{raywin_8h_a463da1a36c110a831b0d7cefbd9730be}} 
+\index{raywin.h@{raywin.h}!BITMAPINFOHEADER@{BITMAPINFOHEADER}}
+\index{BITMAPINFOHEADER@{BITMAPINFOHEADER}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{BITMAPINFOHEADER}{BITMAPINFOHEADER}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o_h_e_a_d_e_r}{tag\+BITMAPINFOHEADER}} \mbox{\hyperlink{raywin_8h_a463da1a36c110a831b0d7cefbd9730be}{BITMAPINFOHEADER}}}
+
+\mbox{\Hypertarget{raywin_8h_ab49ef4b9ffb489ffc8a60b02716db46d}\label{raywin_8h_ab49ef4b9ffb489ffc8a60b02716db46d}} 
+\index{raywin.h@{raywin.h}!LPMSG@{LPMSG}}
+\index{LPMSG@{LPMSG}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{LPMSG}{LPMSG}}
+{\footnotesize\ttfamily typedef struct tag\+MSG$\ast$ \mbox{\hyperlink{raywin_8h_ab49ef4b9ffb489ffc8a60b02716db46d}{LPMSG}}}
+
+\mbox{\Hypertarget{raywin_8h_a17a11cc369b8290d453bd4b23334a3bf}\label{raywin_8h_a17a11cc369b8290d453bd4b23334a3bf}} 
+\index{raywin.h@{raywin.h}!PBITMAPINFOHEADER@{PBITMAPINFOHEADER}}
+\index{PBITMAPINFOHEADER@{PBITMAPINFOHEADER}!raywin.h@{raywin.h}}
+\doxysubsubsection{\texorpdfstring{PBITMAPINFOHEADER}{PBITMAPINFOHEADER}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o_h_e_a_d_e_r}{tag\+BITMAPINFOHEADER}} $\ast$ \mbox{\hyperlink{raywin_8h_a17a11cc369b8290d453bd4b23334a3bf}{PBITMAPINFOHEADER}}}
+

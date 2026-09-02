@@ -1,0 +1,68 @@
+\hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$raylib.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}File\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Framework.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}raywin.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a18b02fb6842170152f40b5efe1e13250}{create\+\_\+logger}} ()
+\item 
+std\+::string \mbox{\hyperlink{main_8cpp_a2797eb5d8daa846258f955dec6e9198b}{return\+\_\+func\+\_\+name}} (bool line, bool file, const std\+::source\+\_\+location \&location)
+\item 
+void \mbox{\hyperlink{main_8cpp_a8c26dc5be48755b90e7b666bcd2952d7}{quick\+\_\+start}} ()
+\item 
+int \+\_\+stdcall \mbox{\hyperlink{main_8cpp_adfd95e7400be534fc16d56c0a4d11d72}{w\+Win\+Main}} (\+\_\+\+In\+\_\+ HINSTANCE h\+Instance, \+\_\+\+In\+\_\+opt\+\_\+ HINSTANCE h\+Prev\+Instance, \+\_\+\+In\+\_\+ LPWSTR lp\+Cmd\+Line, \+\_\+\+In\+\_\+ int n\+Show\+Cmd)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_common_8h_a9d3a688608f8763fc0d1558716467596}{fsink}} \mbox{\hyperlink{main_8cpp_a2aa1ad31fa72260de6a9eefe120dc4d0}{file\+\_\+sink}} = std\+::make\+\_\+shared$<$spdlog\+::sinks\+::basic\+\_\+file\+\_\+sink\+\_\+mt$>$(\char`\"{}log.\+txt\char`\"{}, true)
+\item 
+\mbox{\hyperlink{_common_8h_ad6e6a4c5a29fd571b7c0dfb59854f861}{msink}} \mbox{\hyperlink{main_8cpp_a9bfc2c9333380312aa590b16c5bff08d}{msvc\+\_\+sink}} = std\+::make\+\_\+shared$<$spdlog\+::sinks\+::msvc\+\_\+sink\+\_\+mt$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a18b02fb6842170152f40b5efe1e13250}\label{main_8cpp_a18b02fb6842170152f40b5efe1e13250}} 
+\index{main.cpp@{main.cpp}!create\_logger@{create\_logger}}
+\index{create\_logger@{create\_logger}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_logger()}{create\_logger()}}
+{\footnotesize\ttfamily void create\+\_\+logger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a8c26dc5be48755b90e7b666bcd2952d7}\label{main_8cpp_a8c26dc5be48755b90e7b666bcd2952d7}} 
+\index{main.cpp@{main.cpp}!quick\_start@{quick\_start}}
+\index{quick\_start@{quick\_start}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{quick\_start()}{quick\_start()}}
+{\footnotesize\ttfamily void quick\+\_\+start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a2797eb5d8daa846258f955dec6e9198b}\label{main_8cpp_a2797eb5d8daa846258f955dec6e9198b}} 
+\index{main.cpp@{main.cpp}!return\_func\_name@{return\_func\_name}}
+\index{return\_func\_name@{return\_func\_name}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{return\_func\_name()}{return\_func\_name()}}
+{\footnotesize\ttfamily std\+::string return\+\_\+func\+\_\+name (\begin{DoxyParamCaption}\item[{bool}]{line,  }\item[{bool}]{file,  }\item[{const std\+::source\+\_\+location \&}]{location }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_adfd95e7400be534fc16d56c0a4d11d72}\label{main_8cpp_adfd95e7400be534fc16d56c0a4d11d72}} 
+\index{main.cpp@{main.cpp}!wWinMain@{wWinMain}}
+\index{wWinMain@{wWinMain}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{wWinMain()}{wWinMain()}}
+{\footnotesize\ttfamily int \+\_\+stdcall w\+Win\+Main (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+ HINSTANCE}]{h\+Instance,  }\item[{\+\_\+\+In\+\_\+opt\+\_\+ HINSTANCE}]{h\+Prev\+Instance,  }\item[{\+\_\+\+In\+\_\+ LPWSTR}]{lp\+Cmd\+Line,  }\item[{\+\_\+\+In\+\_\+ int}]{n\+Show\+Cmd }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a2aa1ad31fa72260de6a9eefe120dc4d0}\label{main_8cpp_a2aa1ad31fa72260de6a9eefe120dc4d0}} 
+\index{main.cpp@{main.cpp}!file\_sink@{file\_sink}}
+\index{file\_sink@{file\_sink}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{file\_sink}{file\_sink}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_common_8h_a9d3a688608f8763fc0d1558716467596}{fsink}} file\+\_\+sink = std\+::make\+\_\+shared$<$spdlog\+::sinks\+::basic\+\_\+file\+\_\+sink\+\_\+mt$>$(\char`\"{}log.\+txt\char`\"{}, true)}
+
+\mbox{\Hypertarget{main_8cpp_a9bfc2c9333380312aa590b16c5bff08d}\label{main_8cpp_a9bfc2c9333380312aa590b16c5bff08d}} 
+\index{main.cpp@{main.cpp}!msvc\_sink@{msvc\_sink}}
+\index{msvc\_sink@{msvc\_sink}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{msvc\_sink}{msvc\_sink}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_common_8h_ad6e6a4c5a29fd571b7c0dfb59854f861}{msink}} msvc\+\_\+sink = std\+::make\+\_\+shared$<$spdlog\+::sinks\+::msvc\+\_\+sink\+\_\+mt$>$()}
+
