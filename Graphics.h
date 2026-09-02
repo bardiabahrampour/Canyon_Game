@@ -6,11 +6,8 @@
 #include <vector>
 
 #include "Sprite.h"
+#include "Tilemap.h"
 #include "raywin.h"
-
-constexpr int TILE_WIDTH_DRAW = 635 / 2;
-constexpr int TILE_HEIGHT_DRAW = 340 / 2;
-
 /*
         How it works:
                 This Class Contains a Vector full of Sprites
@@ -22,29 +19,6 @@ constexpr int TILE_HEIGHT_DRAW = 340 / 2;
 /* class GraphicsException : std::runtime_error {
 
 };*/
-
-typedef std::pair<int, int> Tilepos;
-
-class Tilemap {
-    std::vector<Sprite> tile_types;
-    std::map<Tilepos, int> tiles;
-    float maxx, maxy;
-    int posx, posy;
-    float offsets[4] = { 0, -maxx, 0, 0 };
-    float offsetx, offsety;
-    int rx=0, ry=0;
-
-public:
-    void set(int x, int y,float posx = 0, float posy = 0);
-    void update(int prx,int pry);
-    void addTiletype(Sprite& a);
-    void setTile(int x, int y, int type);
-    void draw(int x, int y, float offsetx, float offsety,SpriteBuffer &sprt_buff);
-    float getMaxx();
-    float getMaxy();
-    void setOffsetx(float offsetx_p);
-    void setOffsety(float offsety_p);
-};
 
 class Graphics {
     Vector2 cam_cursor {};
@@ -59,7 +33,6 @@ class Graphics {
     int rotation_y = 1;
     Vector2 deg[4] = { (1, 1), (-1, 1), (-1, -1), (1, -1) };
     int deg_indx = 0;
-    Tilemap tile;
 
 public:
     double cam_mov = 0.05;
@@ -80,5 +53,5 @@ public:
     void ZoomIn();
     void RotateRight();
     void RotateLeft();
-    void Update(SpriteBuffer& sprt_buff,SpriteBuffer& gui_buff);
+    void Update(SpriteBuffer& sprt_buff, SpriteBuffer& gui_buff);
 };

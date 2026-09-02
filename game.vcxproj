@@ -160,6 +160,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Tilemap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
@@ -172,6 +173,7 @@
     <ClInclude Include="raywin.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Tilemap.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Icon.ico" />

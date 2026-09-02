@@ -24,6 +24,8 @@
 void Framework::init()
 {
     this->grph.Init(GetScreenWidth(), GetScreenHeight());
+    this->tile.set(50, 30);
+    this->gui.Init();
     this->game_state = GameState::PLAYING;
     while (!WindowShouldClose() && game_is_running) {
         this->update();
@@ -64,7 +66,9 @@ void Framework::update()
     }
 
     // this->Command_Buffer.clear();
-    this->grph.Update(sprite_buffer,gui_buffer);
+    this->tile.draw(1, 1, 0, 0, sprite_buffer);
+    this->grph.Update(sprite_buffer, gui_buffer);
+    //this->gui.Update(gui_buffer);
 }
 
 void Framework::GameLoop()
@@ -118,10 +122,12 @@ void Framework::CameraInput()
         grph.RotateLeft();
 }
 
-void Framework::SetSpriteBuffer(SpriteBuffer& sprt_buff) {
+void Framework::SetSpriteBuffer(SpriteBuffer& sprt_buff)
+{
     sprite_buffer = sprt_buff;
 }
 
-void Framework::SetGuiBuffer(SpriteBuffer& gui_buff) {
+void Framework::SetGuiBuffer(SpriteBuffer& gui_buff)
+{
     gui_buffer = gui_buff;
 }

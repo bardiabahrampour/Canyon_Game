@@ -9,6 +9,7 @@
 #include <vector>
 
 #include "Common.h"
+#include "GUI.h"
 #include "Graphics.h"
 #include "raywin.h"
 
@@ -67,6 +68,8 @@ class Framework {
          } }
     };
     GameState game_state = GameState::NONE;
+    GUI gui;
+    Tilemap tile;
     Graphics grph;
     int speed = 0;
     double camx = 0, camy = 0;
