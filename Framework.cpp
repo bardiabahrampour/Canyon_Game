@@ -25,8 +25,7 @@ void Framework::init()
 {
     this->grph.Init(GetScreenWidth(), GetScreenHeight());
     this->tile.set(50, 30);
-    this->gui.Init();
-    this->game_state = GameState::PLAYING;
+   // this->gui.Init();
     while (!WindowShouldClose() && game_is_running) {
         this->update();
     }
@@ -35,14 +34,13 @@ void Framework::init()
 // this is incredibly inefficient and causes EXTREME slow downs
 void Framework::update()
 {
-    if (this->game_state == GameState::NONE)
-        throw GameException("GameState is NONE!!");
-
     // test example!
     if (IsKeyPressed(KEY_ESCAPE))
         this->Command_Buffer.push_back(Command::EXIT_GAME);
     if (IsKeyPressed(KEY_F))
         this->Command_Buffer.push_back(Command::TOGGLE_FULLSCREEN);
+    if (IsKeyPressed(KEY_SPACE))
+        this->Command_Buffer.push_back(Command::TOGGLE_PAUSE);
     if (!this->Command_Buffer.empty()) {
         for (auto& cmdbuf : Command_Buffer) {
             auto it = this->Command_Map.find(cmdbuf);
@@ -54,26 +52,21 @@ void Framework::update()
             this->Command_Buffer.pop_back();
         }
     }
-    switch (this->game_state) {
-    case GameState::MAIN_MENU:
-        break;
-    case GameState::PAUSE:
-        break;
-    case GameState::PLAYING:
-        this->GameLoop();
-    default:
-        break;
-    }
 
-    // this->Command_Buffer.clear();
+    GameLoop();
+
+    this->Command_Buffer.clear();
+    this->gui.Update(gui_buffer);
     this->tile.draw(1, 1, 0, 0, sprite_buffer);
     this->grph.Update(sprite_buffer, gui_buffer);
-    //this->gui.Update(gui_buffer);
 }
 
 void Framework::GameLoop()
 {
-    this->CameraInput();
+    if (playing) {
+        this->gui.Text("paused",GUITextStyle::Heading);
+        this->CameraInput();
+    }
 }
 
 void Framework::send(const Command& cmd)
@@ -83,6 +76,7 @@ void Framework::send(const Command& cmd)
 
 void Framework::CameraInput()
 {
+    _log::debug("w");
     //  TODO: turn to switch case
     if (IsKeyDown(KEY_LEFT_SHIFT))
         speed = 10;

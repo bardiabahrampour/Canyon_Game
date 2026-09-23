@@ -29,21 +29,13 @@ struct CameraProperties {
 enum class Command {
     EXIT_GAME,
     TOGGLE_FULLSCREEN,
-    TEST
+    TOGGLE_PAUSE,
 };
 
 // Game Options
 struct Options {
     int camspeed = 0;
     int move_intensity = 0;
-};
-
-// Game State
-enum class GameState {
-    MAIN_MENU,
-    PAUSE,
-    PLAYING,
-    NONE,
 };
 
 struct GameException : public std::runtime_error {
@@ -65,9 +57,12 @@ class Framework {
          } },
         { Command::TOGGLE_FULLSCREEN, [=]() {
              ToggleFullscreen();
+         } },
+        { Command::TOGGLE_PAUSE, [=]() {
+             playing = !playing;
          } }
     };
-    GameState game_state = GameState::NONE;
+    bool playing = false;
     GUI gui;
     Tilemap tile;
     Graphics grph;

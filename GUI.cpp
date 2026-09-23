@@ -1,4 +1,5 @@
 #include "GUI.h"
+#include "Common.h"
 
 /*
     GUI System:
@@ -7,37 +8,35 @@
         to desgin layouts
 */
 
-void GUI::Init() {
+void GUI::Init()
+{
     gui_state = GUIState::MAIN_MENU;
 }
 
-void GUI::Update(SpriteBuffer& gui_buff) {
-    switch (gui_state) {
-    case (GUIState::MAIN_MENU):
-        MainMenu(gui_buff);
-        break;
-    case (GUIState::IN_GAME):
-        InGame(gui_buff);
-        break;
-    case (GUIState::NONE):
-        throw GUIException("gui_state is still GUIState::NONE\n"
-        "state is still not assigned after construction");
-    default:
-        throw GUIException("gui_state switch statement is default");
-        break;
-    }
-    prev_state = gui_state;
+void GUI::Update(SpriteBuffer& gui_buff)
+{
+    gui_buff.clear();
+    gui_buff = buff;
 }
 
-void GUI::MainMenu(SpriteBuffer& gui_buff) {
-    Sprite Background = Sprite("background.jpg");
-    gui_buff.push_back(Background);
-    while (!IsKeyPressed(KEY_ENTER)) {
-        continue;
-    }
-    gui_state = GUIState::IN_GAME;
-}
-
-void GUI::InGame(SpriteBuffer& gui_buff) {
+void GUI::MainMenu()
+{
     return;
+}
+
+void GUI::InGame()
+{
+    return;
+}
+
+void GUI::Render(Sprite& spr)
+{
+    this->buff.push_back(spr);
+}
+
+void GUI::Text(std::string text, GUITextStyle text_style) {
+    Image img = ImageText(text.c_str(), 32, WHITE);
+    Texture2D tex = LoadTextureFromImage(img);
+    UnloadImage(img);
+    this->buff.push_back(tex);
 }

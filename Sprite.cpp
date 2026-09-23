@@ -15,6 +15,9 @@ Sprite::Sprite(Texture2D t, int x, int y, Color ti, int res)
 Sprite::Sprite(const char* str, int x, int y, Color ti, int res)
 {
     Image tmp_img = LoadImage(str);
+    if (tmp_img.data == nullptr) {
+        throw "didn't load image for sprite";
+    }
     Texture2D tmp_txt = LoadTextureFromImage(tmp_img);
     UnloadImage(tmp_img);
     this->texture = tmp_txt;

@@ -44,45 +44,6 @@ std::string return_func_name(bool line, bool file,
     return tmp;
 }
 
-// for quick prototyping and testing
-void quick_start()
-{
-    Vector2 Cursor = { 800, 600 };
-    InitWindow(1920, 1080, "Canyon");
-    Camera2D camera {};
-    camera.offset = { 400, 300 };
-    camera.zoom = 1.0f;
-    camera.target = Cursor;
-    Image img = LoadImage("res/placeholders/island_full_test_1.png");
-    _log::critical(return_func_name(true, true));
-    Texture2D text = LoadTextureFromImage(img);
-    UnloadImage(img);
-    SetTargetFPS(60);
-    Framework frm;
-    while (!WindowShouldClose()) {
-        frm.update();
-        if (IsKeyDown(KEY_RIGHT)) {
-            Cursor.x += 5.0f;
-            // OutputDebugStringA(std::to_string(Cursor.x).c_str());
-            // OutputDebugStringA("\n ");
-        }
-        if (IsKeyDown(KEY_MINUS)) {
-            camera.zoom -= 0.005f;
-            frm.send(Command::TEST);
-        }
-        camera.target = Cursor;
-        BeginDrawing();
-        ClearBackground(BLACK);
-        BeginMode2D(camera);
-        DrawTexture(text, 300, 400, WHITE);
-        EndMode2D();
-        DrawText("Canyon Test", 190, 200, 20, YELLOW);
-        EndDrawing();
-    }
-    UnloadTexture(text);
-    CloseWindow();
-}
-
 int _stdcall wWinMain(_In_ HINSTANCE hInstance,
     _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine,
     _In_ int nShowCmd)
