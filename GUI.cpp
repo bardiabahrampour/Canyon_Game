@@ -17,6 +17,7 @@ void GUI::Update(SpriteBuffer& gui_buff)
 {
     gui_buff.clear();
     gui_buff = buff;
+    buff.clear();
 }
 
 void GUI::MainMenu()
@@ -35,8 +36,9 @@ void GUI::Render(Sprite& spr)
 }
 
 void GUI::Text(std::string text, GUITextStyle text_style) {
-    Image img = ImageText(text.c_str(), 32, WHITE);
+    Image img = ImageTextEx(LoadFont("res/gui.ttf"), text.c_str(), 72,5, WHITE);
     Texture2D tex = LoadTextureFromImage(img);
     UnloadImage(img);
-    this->buff.push_back(tex);
+    Sprite spr(tex, (1920 - MeasureText(text.c_str(),72))/2, 50);
+    this->buff.push_back(spr);
 }

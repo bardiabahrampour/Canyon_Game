@@ -64,8 +64,9 @@ void Framework::update()
 void Framework::GameLoop()
 {
     if (playing) {
-        this->gui.Text("paused",GUITextStyle::Heading);
         this->CameraInput();
+    } else {
+        this->gui.Text("paused", GUITextStyle::Heading);
     }
 }
 
@@ -76,7 +77,6 @@ void Framework::send(const Command& cmd)
 
 void Framework::CameraInput()
 {
-    _log::debug("w");
     //  TODO: turn to switch case
     if (IsKeyDown(KEY_LEFT_SHIFT))
         speed = 10;
